@@ -2,6 +2,8 @@
 
 Une question par jour, rien que pour vous deux. Entre nous est un projet d'app de couple française, pensée pour concurrencer Paired avec un ton, des contenus et une mascotte bien à nous.
 
+**Tout voir en ligne : [lamascotte27.github.io/entre-nous](https://lamascotte27.github.io/entre-nous/)**, et le prototype directement : [lamascotte27.github.io/entre-nous/prototype](https://lamascotte27.github.io/entre-nous/prototype/).
+
 ![Aperçu de l'app en version Premium](apercus/premium.png)
 
 ## Ce qu'il y a dans ce dépôt
@@ -15,17 +17,13 @@ Une question par jour, rien que pour vous deux. Entre nous est un projet d'app d
 | [`apercus/`](apercus/) | Captures d'écran | directement sur GitHub |
 | [`source/`](source/) | Le code qui génère le prototype, les mascottes et le rapport | voir plus bas |
 
-Le plus simple pour tout parcourir : télécharger le dépôt, puis ouvrir `index.html` à la racine.
+Le plus simple pour tout parcourir : la [page d'accueil en ligne](https://lamascotte27.github.io/entre-nous/).
 
 ## Voir le prototype
 
-1. Sur GitHub : **Code → Download ZIP**, puis dézipper. Ou, en ligne de commande :
+Le plus simple : ouvrir [lamascotte27.github.io/entre-nous/prototype](https://lamascotte27.github.io/entre-nous/prototype/), sur ordinateur ou sur téléphone.
 
-   ```bash
-   git clone https://github.com/Lamascotte27/entre-nous.git
-   ```
-
-2. Ouvrir `prototype/index.html` dans Chrome, Safari ou Firefox. Il faut une connexion internet pour les polices.
+Pour l'avoir en local : **Code → Download ZIP**, ou `git clone https://github.com/Lamascotte27/entre-nous.git`, puis ouvrir `prototype/index.html`. Il faut une connexion internet pour les polices.
 
 Sur ordinateur, le panneau de droite permet de :
 
@@ -71,15 +69,9 @@ node build.js
 
 Le code de l'app est dans `source/onb/` : `onb.js` (écrans et navigation), `onb-app.js` (les onglets de l'app), et trois feuilles de style.
 
-## Partager ce dépôt
+## Partager
 
-Le dépôt est privé. Pour donner l'accès à quelqu'un qui a un compte GitHub : **Settings → Collaborators → Add people**. Ou, en ligne de commande, en remplaçant `PSEUDO` par son nom d'utilisateur GitHub :
-
-```bash
-gh api -X PUT repos/Lamascotte27/entre-nous/collaborators/PSEUDO -f permission=pull
-```
-
-`pull` donne un accès en lecture seule. Mettre `push` pour autoriser les modifications.
+Le dépôt est public : le lien suffit, pas besoin de compte GitHub. Le site est publié par GitHub Pages à chaque mise à jour de la branche `main`.
 
 ---
 
