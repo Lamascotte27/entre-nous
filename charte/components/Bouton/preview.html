@@ -1,0 +1,13 @@
+<!-- @dsCard group="Actions" height=100 -->
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Aperçu</title></head>
+<body>
+<div id="root" class="en-demo"></div>
+<script>
+  var E = window.EntreNous, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(E.Bouton, null, 'Écrire ma réponse'), h(E.Bouton, { variante: 'secondaire' }, 'Inviter Thomas'), h(E.Bouton, { variante: 'discret' }, 'Plus tard'), h(E.Bouton, { disabled: true }, 'Envoyer')));
+</script>
+</body>
+</html>

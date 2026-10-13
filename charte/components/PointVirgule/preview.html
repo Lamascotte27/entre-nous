@@ -1,0 +1,15 @@
+<!-- @dsCard group="Marque" height=360 -->
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Aperçu</title></head>
+<body>
+<div id="root" class="en-demo"></div>
+<script>
+  var E = window.EntreNous, h = React.createElement;
+  var poses = [['ensemble','Ensemble'],['question','La question'],['attente','Point attend…'],['revelation','Révélation !'],['calin','Câlin'],['fete','Palier de série'],['endormi','En pause']];
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, poses.map(function (p) {
+    return h('div', { key: p[0], className: 'en-demo-col', style: { justifyItems: 'center' } }, h(E.PointVirgule, { pose: p[0], taille: 128 }), h('span', { className: 'en-demo-legende' }, p[1]));
+  })));
+</script>
+</body>
+</html>

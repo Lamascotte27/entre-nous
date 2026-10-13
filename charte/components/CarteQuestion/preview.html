@@ -1,0 +1,15 @@
+<!-- @dsCard group="Question du jour" height=640 width=880 -->
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Aperçu</title></head>
+<body>
+<div id="root" class="en-demo"></div>
+<script>
+  var E = window.EntreNous, h = React.createElement;
+  var root = document.getElementById('root');
+  ReactDOM.createRoot(root).render(h(React.Fragment, null,
+    h(E.CarteQuestion, { date: 'mardi 13 octobre', serie: 41, question: 'Quel petit geste de l’autre te fait te sentir aimé·e ?', saReponse: 'Quand tu me laisses la dernière part de tarte.', prenom: 'Thomas' }),
+    h(E.CarteQuestion, { date: 'mardi 13 octobre', serie: 41, question: 'Quel petit geste de l’autre te fait te sentir aimé·e ?', maReponse: 'Quand tu me fais un café sans que je demande.', monPrenom: 'Léa', saReponse: 'Quand tu me laisses la dernière part de tarte.', prenom: 'Thomas' })));
+</script>
+</body>
+</html>

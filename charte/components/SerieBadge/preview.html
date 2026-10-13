@@ -1,0 +1,12 @@
+<!-- @dsCard group="Engagement" height=80 -->
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><title>Aperçu</title></head>
+<body>
+<div id="root" class="en-demo"></div>
+<script>
+  var E = window.EntreNous, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(E.SerieBadge, { jours: 1 }), h(E.SerieBadge, { jours: 41 }), h(E.SerieBadge, { jours: 365 })));
+</script>
+</body>
+</html>

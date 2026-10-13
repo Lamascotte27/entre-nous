@@ -1,0 +1,1402 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Paired, version française</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Schibsted+Grotesk:ital,wght@0,400..800;1,400..800&display=swap">
+<style>
+/* Dossier éditorial en une colonne large ; les deux partenaires = bleu et rouge (clin d'œil France), le papier reste neutre */
+:root {
+  --paper: #FAF9F7;
+  --card: #FFFFFF;
+  --ink: #191823;
+  --ink-2: #4C4A5A;
+  --ink-3: #6F6C7E;
+  --rule: #E5E2E9;
+  --wash: #F1EFF3;
+  --bleu: #2747C4;
+  --rouge: #D9363E;
+  --bleu-soft: #E8EDFC;
+  --rouge-soft: #FCEBEC;
+  --ord-1: #9DB0F2;
+  --ord-2: #5E7BE6;
+  --ord-3: #2747C4;
+  --good: #1D7A4C;
+  --warn: #A86B12;
+  --shadow: 0 1px 2px rgba(25, 24, 35, .06), 0 8px 24px rgba(25, 24, 35, .06);
+  --inv-bg: #191823;
+  --inv-fg: #FAF9F7;
+  --inv-muted: #C9C6D4;
+  --f-display: "Bodoni Moda", "Bodoni 72", Didot, "Libre Bodoni", Georgia, serif;
+  --f-body: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111018; --card: #1B1A24; --ink: #F1F0F6; --ink-2: #C3C0D0; --ink-3: #9A97AB;
+    --rule: #2E2C3B; --wash: #23222E; --bleu: #6280F2; --rouge: #E2535B;
+    --bleu-soft: #1E2548; --rouge-soft: #3A1D24; --ord-1: #3A4FA6; --ord-2: #5470E0; --ord-3: #97ABFB;
+    --good: #4FBF85; --warn: #E0A84A; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    --inv-bg: #262438; --inv-fg: #F1F0F6; --inv-muted: #C3C0D0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111018; --card: #1B1A24; --ink: #F1F0F6; --ink-2: #C3C0D0; --ink-3: #9A97AB;
+  --rule: #2E2C3B; --wash: #23222E; --bleu: #6280F2; --rouge: #E2535B;
+  --bleu-soft: #1E2548; --rouge-soft: #3A1D24; --ord-1: #3A4FA6; --ord-2: #5470E0; --ord-3: #97ABFB;
+  --good: #4FBF85; --warn: #E0A84A; --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    --inv-bg: #262438; --inv-fg: #F1F0F6; --inv-muted: #C3C0D0;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body { background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1140px; margin: 0 auto; padding-inline: 24px; }
+@media (max-width: 600px) { .wrap { padding-inline: 16px; } }
+a { color: var(--bleu); text-underline-offset: 3px; }
+:focus-visible { outline: 2px solid var(--bleu); outline-offset: 2px; border-radius: 4px; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* ---------- barre du haut ---------- */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; gap: 20px; height: 54px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 14px; letter-spacing: .01em; white-space: nowrap; color: var(--ink); text-decoration: none; }
+.brand .dots { display: inline-flex; }
+.brand .dots i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.brand .dots i:first-child { background: var(--bleu); }
+.brand .dots i:last-child { background: var(--rouge); margin-left: -4px; mix-blend-mode: multiply; }
+:root[data-theme="dark"] .brand .dots i:last-child { mix-blend-mode: screen; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand .dots i:last-child { mix-blend-mode: screen; } }
+.nav { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-left: auto; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { font-size: 13px; color: var(--ink-2); text-decoration: none; padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+.nav a:hover { background: var(--wash); color: var(--ink); }
+.nav a.on { background: var(--ink); color: var(--paper); }
+@media (max-width: 760px) { .brand span.t { display: none; } }
+
+/* ---------- typo ---------- */
+h1, h2, h3 { font-family: var(--f-display); font-weight: 500; text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: clamp(40px, 6.4vw, 78px); line-height: 1.02; }
+h1 em, h2 em { font-style: italic; }
+h2 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; }
+h3 { font-size: 24px; line-height: 1.2; }
+.kicker { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; font-weight: 600; color: var(--ink-3); }
+.lede { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 62ch; }
+p { max-width: 68ch; }
+.small { font-size: 13px; color: var(--ink-3); }
+.src { font-size: 12px; color: var(--ink-3); }
+.src a { color: inherit; }
+
+section.ch { padding-block: 88px 24px; scroll-margin-top: 60px; }
+.ch-head { display: grid; gap: 14px; margin-bottom: 40px; }
+@media (max-width: 600px) { section.ch { padding-block: 64px 12px; } }
+
+/* ---------- hero ---------- */
+.hero { padding-block: 64px 24px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.hero > * { min-width: 0; }
+@media (max-width: 920px) { .hero { grid-template-columns: 1fr; gap: 40px; padding-block: 40px 8px; } }
+.hero .lede { margin-top: 22px; }
+.hero h1 .amt { white-space: nowrap; }
+.hero-note { margin-top: 18px; }
+
+/* démo question du jour */
+.qotd { background: var(--card); border: 1px solid var(--rule); border-radius: 22px; box-shadow: var(--shadow); padding: 22px; display: grid; gap: 18px; }
+.qotd-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.streak { font-size: 12px; font-weight: 600; color: var(--ink-2); background: var(--wash); padding: 4px 10px; border-radius: 999px; }
+.qotd-q { font-family: var(--f-display); font-size: 26px; line-height: 1.2; text-wrap: balance; min-height: 2.4em; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .pair { grid-template-columns: 1fr; } }
+.ans { border-radius: 16px; padding: 14px; display: grid; gap: 10px; align-content: start; min-height: 172px; min-width: 0; }
+.ans.me { background: var(--rouge-soft); }
+.ans.them { background: var(--bleu-soft); position: relative; }
+.who { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+.who i { width: 10px; height: 10px; border-radius: 50%; display: block; }
+.me .who i { background: var(--rouge); }
+.them .who i { background: var(--bleu); }
+.ans textarea { width: 100%; min-height: 84px; resize: none; border: 1px solid transparent; border-radius: 10px; padding: 10px; font: inherit; font-size: 15px; background: var(--card); color: var(--ink); }
+.ans textarea:focus { outline: none; border-color: var(--rouge); }
+.ans .said { font-size: 15px; line-height: 1.45; overflow-wrap: anywhere; }
+.them .said { transition: filter .7s ease, opacity .7s ease; }
+.them.locked .said { filter: blur(7px); opacity: .75; user-select: none; }
+.lockmsg { font-size: 12.5px; color: var(--ink-2); display: flex; gap: 6px; align-items: center; }
+.them:not(.locked) .lockmsg { display: none; }
+.qotd-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.btn { appearance: none; border: 1px solid var(--rule); background: var(--card); color: var(--ink); font: inherit; font-size: 14px; font-weight: 600; padding: 10px 16px; border-radius: 999px; cursor: pointer; }
+.btn:hover { border-color: var(--ink-3); }
+.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.btn.primary:hover { opacity: .9; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.qotd-foot { font-size: 12.5px; color: var(--ink-3); }
+
+/* ---------- chiffres clés ---------- */
+.figs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: 56px; }
+.fig { padding: 20px 18px 18px; border-left: 1px solid var(--rule); display: grid; gap: 4px; align-content: start; }
+.fig:first-child { border-left: 0; padding-left: 0; }
+.fig .v { font-size: 34px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; }
+.fig .l { font-size: 13.5px; color: var(--ink-2); }
+.fig .s { font-size: 11.5px; color: var(--ink-3); }
+@media (max-width: 920px) { .figs { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fig { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); } .fig:nth-child(-n+2) { border-top: 0; } .fig:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--rule); } .fig:last-child:nth-child(odd) { grid-column: 1 / -1; } }
+
+/* ---------- mécanique ---------- */
+.mech { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.mech > * { min-width: 0; }
+@media (max-width: 920px) { .mech { grid-template-columns: 1fr; } }
+.loop svg { width: 100%; height: auto; display: block; max-width: 520px; margin: 0 auto; }
+.loop text { fill: var(--ink); font-family: var(--f-body); }
+.points { display: grid; gap: 22px; }
+.point { display: grid; grid-template-columns: 28px 1fr; gap: 12px; }
+.point .ic { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--wash); color: var(--ink); }
+.point h3 { font-family: var(--f-body); font-size: 17px; font-weight: 700; letter-spacing: 0; }
+.point p { margin: 4px 0 0; color: var(--ink-2); font-size: 15px; }
+
+/* ---------- onboarding ---------- */
+.ob { display: grid; grid-template-columns: 340px 1fr; gap: 56px; align-items: start; }
+.ob > * { min-width: 0; }
+@media (max-width: 860px) { .ob { grid-template-columns: 1fr; gap: 28px; } }
+.phone { width: 300px; max-width: 100%; aspect-ratio: 300 / 620; margin: 0 auto; border-radius: 44px; background: var(--ink); padding: 10px; box-shadow: var(--shadow); position: relative; }
+.screen { position: absolute; inset: 10px; border-radius: 34px; background: var(--card); overflow: hidden; display: flex; flex-direction: column; color: var(--ink); }
+.sbar { display: flex; justify-content: space-between; padding: 14px 26px 6px; font-size: 12px; font-weight: 600; }
+.island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 84px; height: 24px; border-radius: 999px; background: var(--ink); }
+.scr-body { flex: 1; display: flex; flex-direction: column; padding: 14px 20px 18px; gap: 12px; min-height: 0; }
+.scr-skip { align-self: flex-end; font-size: 11px; color: var(--ink-3); font-weight: 600; }
+.scr-title { font-size: 19px; line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; }
+.scr-sub { font-size: 12px; color: var(--ink-2); line-height: 1.4; }
+.scr-illus { flex: 1; display: grid; place-items: center; min-height: 120px; }
+.scr-illus svg { width: 70%; max-width: 180px; height: auto; }
+.scr-opts { display: grid; gap: 7px; }
+.scr-opt { border: 1px solid var(--rule); border-radius: 10px; padding: 9px 11px; font-size: 12px; display: flex; align-items: center; gap: 8px; }
+.scr-opt::before { content: ""; width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid var(--ink-3); flex: none; }
+.scr-opt.sel { border-color: var(--bleu); background: var(--bleu-soft); }
+.scr-opt.sel::before { border-color: var(--bleu); background: radial-gradient(circle, var(--bleu) 45%, transparent 50%); }
+.scr-field { border: 1px solid var(--rule); border-radius: 10px; padding: 8px 11px; display: grid; gap: 2px; }
+.scr-field small { font-size: 10px; color: var(--ink-3); }
+.scr-field span { font-size: 12.5px; }
+.scr-spacer { flex: 1; }
+.scr-btn { background: var(--ink); color: var(--card); text-align: center; border-radius: 999px; padding: 11px; font-size: 12.5px; font-weight: 700; }
+.scr-btn.alt { background: var(--wash); color: var(--ink); }
+.scr-link { text-align: center; font-size: 11.5px; color: var(--ink-2); text-decoration: underline; }
+.scr-picker { border-radius: 12px; background: var(--wash); display: grid; grid-template-columns: 1.6fr .8fr 1fr; text-align: center; font-size: 12px; padding: 8px 0; }
+.scr-picker div { display: grid; gap: 4px; color: var(--ink-3); }
+.scr-picker b { color: var(--ink); background: var(--card); padding: 4px 0; }
+.scr-card { border-radius: 14px; background: var(--wash); padding: 16px; text-align: center; display: grid; gap: 10px; place-items: center; font-size: 12px; font-weight: 600; }
+.scr-notif { border-radius: 14px; background: var(--wash); padding: 10px; font-size: 11px; display: grid; gap: 2px; box-shadow: var(--shadow); }
+.scr-cmp { display: grid; grid-template-columns: 1fr 1.15fr; gap: 6px; font-size: 10.5px; line-height: 1.3; }
+.scr-cmp > div { border-radius: 12px; padding: 10px; display: grid; gap: 7px; align-content: start; }
+.scr-cmp .wo { background: var(--wash); color: var(--ink-2); }
+.scr-cmp .wi { background: var(--bleu-soft); }
+.scr-cmp b { font-size: 11.5px; }
+.pw-trial { display: flex; align-items: center; gap: 8px; border: 1px solid var(--rule); border-radius: 10px; padding: 8px 10px; font-size: 11.5px; }
+.pw-trial i { width: 14px; height: 14px; border-radius: 50%; background: var(--good); display: block; flex: none; }
+.pw-plan { border: 1px solid var(--rule); border-radius: 12px; padding: 9px 11px; display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 11px; }
+.pw-plan.sel { border: 2px solid var(--bleu); }
+.pw-plan b { font-size: 13px; }
+.pw-plan .r { text-align: right; }
+.pw-tag { grid-column: 1 / -1; justify-self: start; font-size: 9px; font-weight: 700; letter-spacing: .08em; background: var(--bleu); color: #fff; padding: 2px 7px; border-radius: 999px; }
+.pw-stars { text-align: center; font-size: 11px; color: var(--ink-2); }
+.pw-stars span { color: var(--warn); letter-spacing: 2px; font-size: 13px; }
+.off-big { font-size: 40px; font-weight: 800; text-align: center; letter-spacing: -0.03em; line-height: 1; }
+.off-timer { justify-self: center; align-self: center; font-size: 11px; background: var(--wash); border-radius: 999px; padding: 4px 10px; text-align: center; }
+.off-price { text-align: center; font-size: 13px; }
+.off-price s { color: var(--ink-3); }
+.dim { position: absolute; inset: 0; background: rgba(10, 10, 20, .35); }
+.sheet { position: absolute; left: 8px; right: 8px; bottom: 8px; background: var(--card); border-radius: 22px; padding: 16px; display: grid; gap: 9px; box-shadow: 0 -4px 30px rgba(0,0,0,.18); }
+.sheet .bar { width: 36px; height: 4px; border-radius: 4px; background: var(--rule); justify-self: center; }
+.sheet .row { height: 26px; border-radius: 8px; background: var(--wash); }
+.sheet .t { font-size: 13px; font-weight: 700; text-align: center; }
+.alert { position: absolute; left: 34px; right: 34px; top: 38%; background: var(--card); border-radius: 16px; padding: 14px 12px 0; text-align: center; font-size: 11.5px; display: grid; gap: 6px; box-shadow: 0 8px 40px rgba(0,0,0,.25); }
+.alert .acts { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); margin-top: 6px; }
+.alert .acts span { padding: 9px; color: var(--bleu); font-weight: 600; }
+.alert .acts span + span { border-left: 1px solid var(--rule); }
+.sys-tag { position: absolute; top: 44px; right: 14px; font-size: 9.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: var(--ink); color: var(--card); padding: 3px 7px; border-radius: 999px; z-index: 3; }
+
+.ob-panel { display: grid; gap: 18px; align-content: start; }
+.ob-meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.chip { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: var(--wash); color: var(--ink); display: inline-flex; align-items: center; gap: 6px; }
+.chip i { width: 8px; height: 8px; border-radius: 2px; display: block; }
+.ob-count { font-size: 13px; color: var(--ink-3); }
+.ob-lever { font-size: clamp(28px, 3.2vw, 38px); line-height: 1.1; }
+.ob-why { font-size: 17px; color: var(--ink-2); margin: 0; }
+.ob-fr { border-left: 3px solid var(--rouge); background: var(--card); padding: 14px 16px; border-radius: 0 12px 12px 0; display: grid; gap: 4px; }
+.ob-fr b { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); }
+.ob-fr span { font-size: 15.5px; }
+.ob-ctrl { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.ob-ctrl .hint { font-size: 12px; color: var(--ink-3); }
+
+.strip { margin-top: 40px; display: grid; gap: 10px; }
+.strip-bar { display: grid; grid-template-columns: repeat(22, minmax(0, 1fr)); gap: 2px; }
+.strip-bar button { appearance: none; border: 0; height: 34px; border-radius: 4px; cursor: pointer; padding: 0; position: relative; background: var(--c); opacity: .6; transition: opacity .15s, transform .15s; }
+.strip-bar button.sys { background: repeating-linear-gradient(135deg, var(--c) 0 3px, transparent 3px 6px); opacity: .75; }
+.strip-bar button:hover { opacity: .75; }
+.strip-bar button.on { opacity: 1; transform: translateY(-4px); box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--ink); }
+.strip-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12.5px; color: var(--ink-2); }
+.strip-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.strip-legend i { width: 10px; height: 10px; border-radius: 3px; display: block; }
+.strip-legend .sysk { background: repeating-linear-gradient(135deg, var(--ink-3) 0 2px, transparent 2px 4px); }
+
+.takeaways { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 48px; border-top: 1px solid var(--rule); }
+.takeaways > div { padding: 20px 20px 0 0; display: grid; gap: 6px; align-content: start; }
+.takeaways b { font-size: 15px; }
+.takeaways span { font-size: 14px; color: var(--ink-2); }
+@media (max-width: 860px) { .takeaways { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .takeaways { grid-template-columns: 1fr; } }
+
+/* ---------- fonctionnalités ---------- */
+.feats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.feat { background: var(--card); padding: 20px; display: grid; gap: 8px; align-content: start; }
+.feat h3 { font-family: var(--f-body); font-size: 16.5px; font-weight: 700; letter-spacing: 0; }
+.feat p { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+.feat .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--rule); color: var(--ink-2); }
+.tag.ret { border-color: color-mix(in srgb, var(--bleu) 40%, var(--rule)); color: var(--bleu); }
+.tag.acq { border-color: color-mix(in srgb, var(--rouge) 40%, var(--rule)); color: var(--rouge); }
+.tag.mon { border-color: color-mix(in srgb, var(--good) 40%, var(--rule)); color: var(--good); }
+@media (max-width: 860px) { .feats { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .feats { grid-template-columns: 1fr; } }
+
+/* ---------- graphiques ---------- */
+.panel { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 22px; min-width: 0; }
+.panel-h { display: grid; gap: 4px; margin-bottom: 14px; }
+.panel-h b { font-size: 15.5px; }
+.panel-h span { font-size: 13px; color: var(--ink-3); }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font-family: var(--f-body); font-size: 11.5px; fill: var(--ink-3); }
+.chart .lbl { fill: var(--ink); font-weight: 600; font-size: 12.5px; }
+.chart .grid { stroke: var(--rule); stroke-width: 1; }
+.chart .axis { stroke: var(--ink-3); stroke-width: 1; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-size: 12.5px; line-height: 1.45; padding: 8px 11px; border-radius: 10px; white-space: nowrap; transform: translate(-50%, calc(-100% - 12px)); opacity: 0; transition: opacity .12s; z-index: 5; }
+.tip.show { opacity: 1; }
+.tip i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12.5px; color: var(--ink-2); margin-bottom: 10px; }
+.legend span { display: inline-flex; gap: 6px; align-items: center; }
+.legend i { width: 10px; height: 10px; border-radius: 3px; display: block; }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.two > * { min-width: 0; }
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+.prose { display: grid; gap: 14px; }
+.prose p { margin: 0; color: var(--ink-2); }
+.prose strong { color: var(--ink); }
+
+/* ---------- France ---------- */
+.why { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; margin-top: 48px; }
+.why > div { border-top: 1px solid var(--rule); padding-block: 20px; display: grid; grid-template-columns: 96px 1fr; gap: 16px; }
+.why .n { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--rouge); }
+.why h3 { font-family: var(--f-body); font-size: 17px; font-weight: 700; letter-spacing: 0; }
+.why p { margin: 6px 0 0; font-size: 15px; color: var(--ink-2); }
+@media (max-width: 760px) { .why { grid-template-columns: 1fr; } }
+
+.tbl-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--card); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 720px; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 11.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-3); font-weight: 600; background: var(--wash); }
+tr:last-child td { border-bottom: 0; }
+td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.yes { color: var(--good); font-weight: 600; }
+.no { color: var(--rouge); font-weight: 600; }
+.mid { color: var(--warn); font-weight: 600; }
+tr.us td { background: var(--rouge-soft); }
+
+/* ---------- simulateur ---------- */
+.sim { display: grid; grid-template-columns: 330px 1fr; gap: 24px; align-items: start; }
+.sim > * { min-width: 0; }
+@media (max-width: 960px) { .sim { grid-template-columns: 1fr; } }
+.ctrls { display: grid; gap: 18px; }
+.seg { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--wash); border-radius: 999px; padding: 4px; gap: 4px; }
+.seg button { appearance: none; border: 0; background: transparent; font: inherit; font-size: 13.5px; font-weight: 600; padding: 8px 6px; border-radius: 999px; color: var(--ink-2); cursor: pointer; }
+.seg button.on { background: var(--card); color: var(--ink); box-shadow: var(--shadow); }
+.grp { display: grid; gap: 12px; }
+.grp > b { font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-3); }
+.sl { display: grid; gap: 4px; }
+.sl label { display: flex; justify-content: space-between; gap: 10px; font-size: 13.5px; color: var(--ink-2); }
+.sl label output { color: var(--ink); font-weight: 700; }
+.sl input[type=range] { width: 100%; accent-color: var(--bleu); }
+.sl small { font-size: 11.5px; color: var(--ink-3); line-height: 1.35; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; }
+.kpi { background: var(--card); padding: 16px 16px 14px; display: grid; gap: 2px; align-content: start; }
+.kpi .l { font-size: 12.5px; color: var(--ink-2); }
+.kpi .v { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.kpi .s { font-size: 11.5px; color: var(--ink-3); }
+.kpi .v.neg { color: var(--rouge); }
+.kpi .v.pos { color: var(--good); }
+@media (max-width: 700px) { .kpis { grid-template-columns: 1fr 1fr; } }
+.sim-charts { display: grid; gap: 20px; }
+details.tablev { margin-top: 4px; }
+details.tablev summary { cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--ink-2); padding: 6px 0; }
+details.tablev table { min-width: 520px; font-size: 13px; }
+
+/* ---------- plan ---------- */
+.plan { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.plan > div { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 20px; display: grid; gap: 10px; align-content: start; }
+.plan .when { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--rouge); }
+.plan h3 { font-size: 22px; }
+.plan ul { margin: 0; padding-left: 18px; font-size: 14px; color: var(--ink-2); display: grid; gap: 6px; }
+@media (max-width: 960px) { .plan { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .plan { grid-template-columns: 1fr; } }
+
+.risks { display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.risk { display: grid; grid-template-columns: 110px 1fr 1fr; gap: 20px; padding-block: 18px; border-bottom: 1px solid var(--rule); }
+.risk > * { min-width: 0; }
+.risk h3 { font-family: var(--f-body); font-size: 16px; font-weight: 700; letter-spacing: 0; }
+.risk p { margin: 0; font-size: 14.5px; color: var(--ink-2); }
+.lvl { font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; justify-self: start; align-self: start; display: inline-flex; gap: 6px; align-items: center; }
+.lvl::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.lvl.h { color: var(--rouge); background: var(--rouge-soft); }
+.lvl.m { color: var(--warn); background: color-mix(in srgb, var(--warn) 14%, var(--card)); }
+.lvl.l { color: var(--good); background: color-mix(in srgb, var(--good) 14%, var(--card)); }
+@media (max-width: 760px) { .risk { grid-template-columns: 1fr; gap: 8px; } }
+
+.verdict { margin-top: 72px; padding: 40px; border-radius: 24px; background: var(--inv-bg); color: var(--inv-fg); display: grid; gap: 18px; }
+.verdict h2 { color: var(--inv-fg); }
+.verdict p { color: var(--inv-muted); margin: 0; font-size: 17px; max-width: 72ch; }
+@media (max-width: 600px) { .verdict { padding: 26px 20px; } }
+
+footer { padding-block: 56px 72px; }
+footer ol { font-size: 12.5px; color: var(--ink-3); padding-left: 18px; display: grid; gap: 4px; columns: 2; column-gap: 40px; }
+footer ol li { break-inside: avoid; overflow-wrap: anywhere; }
+@media (max-width: 760px) { footer ol { columns: 1; } }
+
+</style>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dots"><i></i><i></i></span><span class="t">Paired, version française</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#mecanique">Mécanique</a>
+      <a href="#onboarding">Onboarding</a>
+      <a href="#produit">Produit</a>
+      <a href="#france">Pourquoi la France</a>
+      <a href="#ca">Chiffre d'affaires</a>
+      <a href="#plan">Plan</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="kicker">Étude d'opportunité · app de couple · octobre 2026</div>
+        <h1 style="margin-top:18px">Une question par jour. Deux réponses <em>cachées</em>. <span class="amt">≈ 300 k$</span> par mois.</h1>
+        <p class="lede">Paired transforme la conversation de couple en rituel quotidien, et le fait payer en abonnement. Ce dossier décortique la machine (produit, onboarding, paywall), puis chiffre ce qu'une version pensée pour la France peut rapporter.</p>
+        <p class="src hero-note">Essayez la démo : la réponse de Thomas reste floue tant que vous n'avez pas répondu.</p>
+      </div>
+      <div class="qotd" aria-label="Démo de la question du jour">
+        <div class="qotd-top"><span class="kicker">Question du jour</span><span class="streak" id="streak"></span></div>
+        <div class="qotd-q" id="q-text" aria-live="polite"></div>
+        <div class="pair">
+          <div class="ans me">
+            <div class="who"><i></i>Vous</div>
+            <label for="me-in" class="small" style="position:absolute;left:-9999px">Votre réponse</label>
+            <textarea id="me-in" placeholder="Votre réponse…" maxlength="180"></textarea>
+            <div class="said" id="me-said" hidden></div>
+          </div>
+          <div class="ans them locked" id="them">
+            <div class="who"><i></i>Thomas</div>
+            <div class="said" id="them-said" aria-hidden="false"></div>
+            <div class="lockmsg"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="5" width="8" height="6" rx="1.5" fill="currentColor"/><path d="M4 5V3.5a2 2 0 0 1 4 0V5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>Thomas a répondu. Répondez pour voir sa réponse.</div>
+          </div>
+        </div>
+        <div class="qotd-actions">
+          <button class="btn primary" id="q-send" type="button" disabled>Envoyer et révéler</button>
+          <button class="btn" id="q-next" type="button" hidden>Question suivante</button>
+        </div>
+        <div class="qotd-foot">C'est tout le produit : 2 minutes par jour, une curiosité qu'on ne peut satisfaire qu'en répondant, et un partenaire qui attend.</div>
+      </div>
+    </section>
+
+    <div class="figs" id="figs">
+<div class="fig"><span class="v">≈ 300 k$</span><span class="l">de CA par mois sur les stores</span><span class="s">Sensor Tower, sept. 2026 : iOS 200 k$ + Android 100 k$, hors ventes web</span></div>
+<div class="fig"><span class="v">≈ 70 k</span><span class="l">installs par mois</span><span class="s">Sensor Tower, iOS + Android, sept. 2026</span></div>
+<div class="fig"><span class="v">4,7 ★</span><span class="l">sur 209 000 notes</span><span class="s">App Store américain, oct. 2026</span></div>
+<div class="fig"><span class="v">22</span><span class="l">écrans avant d'entrer dans l'app</span><span class="s">dont 5 écrans système iOS</span></div>
+<div class="fig"><span class="v">79,99 $</span><span class="l">par an, pour deux</span><span class="s">7 jours d'essai, prix US affiché</span></div>
+</div>
+    <p class="src" style="margin-top:10px">Paired est édité par Better Half Ltd (Londres), fondée en 2019 par Kevin Shanahan et Diego López Vieitez, deux anciens de Memrise. Environ 7 à 8 M$ levés, dont 3,6 M$ d'amorçage mené par Eka Ventures en 2021. Les revenus sont des estimations : appkittie affiche 204 k$ pour iOS seul, et le pic de 2023-24 est estimé entre 650 et 800 k$ par mois.</p>
+
+    <!-- ============ MÉCANIQUE ============ -->
+    <section class="ch" id="mecanique">
+      <div class="ch-head">
+        <div class="kicker">La mécanique</div>
+        <h2>Un rituel de deux minutes qui se relance tout seul</h2>
+        <p class="lede">Le cœur de Paired tient en une boucle. Chaque tour commence par une notification venue d'une personne, pas d'une marque. C'est ce qui la rend difficile à ignorer.</p>
+      </div>
+      <div class="mech">
+        <div class="loop" id="loop"><svg viewBox="0 0 600 470" role="img" aria-label="Boucle quotidienne : notification, ouverture, réponse, révélation, discussion, puis le lendemain">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--ink-3)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="ahr" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L8 5L1 9" fill="none" stroke="var(--rouge)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<path d="M328.6,87.8 A150,150 0 0 1 431.2,162.3" fill="none" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ah)"/>
+<path d="M448.9,216.7 A150,150 0 0 1 409.7,337.3" fill="none" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ah)"/>
+<path d="M363.4,370.9 A150,150 0 0 1 236.6,370.9" fill="none" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ah)"/>
+<path d="M190.3,337.3 A150,150 0 0 1 151.1,216.7" fill="none" stroke="var(--ink-3)" stroke-width="1.5" marker-end="url(#ah)"/>
+<path d="M168.8,162.3 A150,150 0 0 1 271.4,87.8" fill="none" stroke="var(--rouge)" stroke-width="2" marker-end="url(#ahr)"/>
+<circle cx="300.0" cy="85.0" r="10" fill="var(--bleu)" stroke="var(--paper)" stroke-width="2"/>
+<circle cx="442.7" cy="188.6" r="10" fill="var(--rouge)" stroke="var(--paper)" stroke-width="2"/>
+<circle cx="388.2" cy="356.4" r="10" fill="var(--rouge)" stroke="var(--paper)" stroke-width="2"/>
+<circle cx="206.8" cy="356.4" r="9" fill="var(--bleu)" stroke="var(--paper)" stroke-width="2"/><circle cx="216.8" cy="356.4" r="9" fill="var(--rouge)" stroke="var(--paper)" stroke-width="2"/>
+<circle cx="152.3" cy="188.6" r="9" fill="var(--bleu)" stroke="var(--paper)" stroke-width="2"/><circle cx="162.3" cy="188.6" r="9" fill="var(--rouge)" stroke="var(--paper)" stroke-width="2"/>
+<text x="300.0" y="41.0" text-anchor="middle" style="font-size:15px;font-weight:600"><tspan x="300.0" dy="0">Notification</tspan><tspan x="300.0" dy="19">« Thomas a répondu »</tspan></text>
+<text x="462.7" y="184.6" text-anchor="start" style="font-size:15px;font-weight:600"><tspan x="462.7" dy="0">J'ouvre l'app</tspan></text>
+<text x="404.2" y="384.4" text-anchor="start" style="font-size:15px;font-weight:600"><tspan x="404.2" dy="0">Je réponds</tspan><tspan x="404.2" dy="19">à mon tour</tspan></text>
+<text x="195.8" y="384.4" text-anchor="end" style="font-size:15px;font-weight:600"><tspan x="195.8" dy="0">Les deux réponses</tspan><tspan x="195.8" dy="19">se dévoilent</tspan></text>
+<text x="135.3" y="184.6" text-anchor="end" style="font-size:15px;font-weight:600"><tspan x="135.3" dy="0">On en parle,</tspan><tspan x="135.3" dy="19">pour de vrai</tspan></text>
+<text x="164.6" y="130.8" text-anchor="end" style="font-size:13px;fill:var(--rouge);font-weight:600">le lendemain, série +1</text>
+<text x="300" y="233" text-anchor="middle" style="font-family:var(--f-display);font-size:46px">2 min</text>
+<text x="300" y="259" text-anchor="middle" style="font-size:13px;fill:var(--ink-3)">par jour, à deux</text>
+</svg></div>
+        <div class="points">
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 4v3.2l2 1.3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><div><h3>Une boucle ouverte</h3><p>La réponse cachée crée un suspense qu'on ne ferme qu'en répondant soi-même. Personne ne laisse une question en suspens sur son couple.</p></div></div>
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="5" cy="5" r="2.5" fill="currentColor"/><circle cx="10" cy="6" r="2" fill="currentColor"/><path d="M1 13c0-2.5 1.8-4 4-4s4 1.5 4 4M8.5 13c0-2 1-3.2 2.3-3.2S13 11 13 13" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></span><div><h3>Une obligation douce</h3><p>L'autre attend votre réponse. La rétention ne dépend plus de la motivation d'une seule personne mais de celle du couple.</p></div></div>
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 3h10M2 7h10M2 11h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><div><h3>Un contenu presque gratuit</h3><p>Une question tient en une ligne. 365 bonnes questions couvrent une année, et les réponses du couple créent le reste du contenu.</p></div></div>
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 10l4-6 4 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><path d="M5 10h4" stroke="currentColor" stroke-width="1.6"/></svg></span><div><h3>Une acquisition qui double</h3><p>Chaque utilisateur doit inviter son partenaire. Une install achetée en entraîne une deuxième gratuite, ce qui pousse le classement App Store.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ONBOARDING ============ -->
+    <section class="ch" id="onboarding" tabindex="-1">
+      <div class="ch-head">
+        <div class="kicker">L'onboarding</div>
+        <h2>22 écrans avant de payer, et pourtant ça convertit</h2>
+        <p class="lede">Reconstitution de l'onboarding iOS filmé dans le tweet. Chaque écran a un rôle précis : engager, personnaliser, faire venir le partenaire, puis vendre. Naviguez avec les flèches ou cliquez sur la frise.</p>
+      </div>
+      <div class="ob">
+        <div class="phone" aria-live="polite"><div class="screen" id="ob-screen"></div></div>
+        <div class="ob-panel">
+          <div class="ob-meta"><span class="chip" id="ob-phase"></span><span class="ob-count" id="ob-count"></span></div>
+          <h3 class="ob-lever" id="ob-lever"></h3>
+          <p class="ob-why" id="ob-why"></p>
+          <div class="ob-fr"><b>Pour la version française</b><span id="ob-fr"></span></div>
+          <div class="ob-ctrl">
+            <button class="btn" id="ob-prev" type="button" aria-label="Écran précédent">← Précédent</button>
+            <button class="btn primary" id="ob-next" type="button" aria-label="Écran suivant">Suivant →</button>
+            <button class="btn" id="ob-play" type="button">Lecture auto</button>
+            <span class="hint">ou flèches ← → du clavier</span>
+          </div>
+        </div>
+      </div>
+      <div class="strip">
+        <div class="strip-bar" id="ob-strip" role="group" aria-label="Les 22 écrans"></div>
+        <div class="strip-legend" id="ob-legend"></div>
+      </div>
+      <div class="takeaways">
+        <div><b>Le compte d'abord</b><span>L'email est capté à l'écran 1. Celui qui ne paie pas reste joignable.</span></div>
+        <div><b>9 questions sur le couple</b><span>Chaque réponse est un petit investissement. Au paywall, on a déjà « construit » quelque chose.</span></div>
+        <div><b>Le partenaire avant le prix</b><span>Invitation et notifications sont placées avant le paywall : la viralité ne dépend pas de l'achat.</span></div>
+        <div><b>Deux chances de vendre</b><span>Paywall avec ancrage, puis offre −50 % à la fermeture. Rien n'est gratuit sans passer par là.</span></div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUIT ============ -->
+    <section class="ch" id="produit">
+      <div class="ch-head">
+        <div class="kicker">Le produit</div>
+        <h2>Ce qu'il y a derrière le paywall</h2>
+        <p class="lede">Le gratuit se limite à une activité par jour, la frise de souvenirs et les dates importantes. Tout le reste est Premium. Chaque fonctionnalité sert l'un de trois objectifs : faire revenir, faire payer, faire venir.</p>
+      </div>
+      <div class="feats"><div class="feat"><div class="tags"><span class="tag">Gratuit</span><span class="tag ret">Rétention</span></div><h3>Question du jour</h3><p>Une question par jour. La réponse de l'autre reste verrouillée jusqu'à ce que les deux aient répondu, puis on peut en discuter dans l'app.</p></div><div class="feat"><div class="tags"><span class="tag">Gratuit</span><span class="tag ret">Rétention</span></div><h3>Frise et dates importantes</h3><p>Album de souvenirs partagé (photos, lieux), comptes à rebours et rappels d'anniversaire par notification et email.</p></div><div class="feat"><div class="tags"><span class="tag">Gratuit</span><span class="tag ret">Rétention</span></div><h3>Séries, widget, célébrations</h3><p>Série de jours avec « gel » pour ne pas la perdre, widget d'écran d'accueil, pop-ups de célébration.</p></div><div class="feat"><div class="tags"><span class="tag">Premium</span><span class="tag ret">Rétention</span></div><h3>1 000+ questions, quiz et jeux</h3><p>Bibliothèque complète, jeux comme « Toi ou moi ? », et quiz hebdo à deux qui suivent la satisfaction du couple dans le temps.</p></div><div class="feat"><div class="tags"><span class="tag">Premium</span><span class="tag mon">Monétisation</span></div><h3>Thèmes sensibles</h3><p>Packs dédiés : conflits, sexualité, argent, langages de l'amour, distance, parentalité. Les sujets qu'on n'ose pas aborder seuls.</p></div><div class="feat"><div class="tags"><span class="tag">Premium</span><span class="tag mon">Monétisation</span></div><h3>Parcours d'experts</h3><p>Programmes guidés de plusieurs jours (jusqu'à 20) écrits par 17 thérapeutes nommés, plus des conseils et exercices.</p></div><div class="feat"><div class="tags"><span class="tag">Premium</span><span class="tag mon">Monétisation</span></div><h3>Bilan de couple</h3><p>Quiz de 9 questions avec un score par domaine et un écran « analyse de vos résultats ».</p></div><div class="feat"><div class="tags"><span class="tag">Premium</span><span class="tag ret">Rétention</span></div><h3>Analyses IA de la semaine</h3><p>Forces et axes de progrès générés à partir des réponses des deux partenaires sur 7 jours.</p></div><div class="feat"><div class="tags"><span class="tag">Premium</span><span class="tag ret">Rétention</span></div><h3>Missions secrètes</h3><p>Chaque semaine, une petite tâche surprise et privée pour chaque partenaire.</p></div><div class="feat"><div class="tags"><span class="tag">Gratuit</span><span class="tag acq">Acquisition</span></div><h3>Invitation par code</h3><p>Le partenaire rejoint avec un code et profite gratuitement du Premium. C'est le moteur viral.</p></div><div class="feat"><div class="tags"><span class="tag">Achat</span><span class="tag acq">Acquisition</span></div><h3>Abonnement à offrir</h3><p>Un an de Premium en cadeau à 39,99 $. Idéal pour la Saint-Valentin et les fiançailles.</p></div><div class="feat"><div class="tags"><span class="tag">Pro</span><span class="tag acq">Acquisition</span></div><h3>Programme thérapeutes</h3><p>Premium gratuit pour les thérapeutes, qui donnent l'app en « devoirs » à leurs patients.</p></div></div>
+
+      <div class="two" style="margin-top:40px">
+        <div class="panel">
+          <div class="panel-h"><b>Ce que paie un couple sur un an</b><span>Grille affichée dans l'onboarding US (oct. 2026). Le mensuel sert surtout d'ancre.</span></div>
+          <div class="chart" id="ch-price"></div>
+        </div>
+        <div class="prose">
+          <h3>Un prix pensé pour deux</h3>
+          <p><strong>Le mensuel est un leurre.</strong> À 29,99 $, personne ne le prend. Il existe pour que l'annuel affiche « −77 % ».</p>
+          <p><strong>Le prix est divisé par deux à l'écran.</strong> « 3,33 $ each a month » : un abonnement couvre les deux partenaires, donc le prix affiché est par personne. À ce niveau, la comparaison se fait avec un café, pas avec une thérapie de couple.</p>
+          <p><strong>Personne ne repart sans une seconde offre.</strong> Fermer le paywall déclenche −50 % avec compte à rebours. L'annuel tombe à 39,99 $.</p>
+          <p class="src">En France, Paired vend 59,99 € par an ou 14,99 € par mois sur son site. Sur l'App Store, sept prix annuels coexistent, de 29,99 € à 74,99 € : autant d'offres promotionnelles testées. Le gratuit se limite à une activité par jour.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FRANCE ============ -->
+    <section class="ch" id="france">
+      <div class="ch-head">
+        <div class="kicker">Pourquoi la France</div>
+        <h2>La place du leader francophone est libre</h2>
+        <p class="lede">Paired est traduit en français, mais n'y a jamais vraiment percé, et n'y fait même pas de publicité. Aucune app française ne propose la question du jour à deux. Celles qui marchent ici sont des jeux coquins.</p>
+      </div>
+      <div class="two">
+        <div class="panel">
+          <div class="panel-h"><b>Du marché total au marché visé</b><span>Il suffit d'une très petite part de la cible pour faire une belle entreprise</span></div>
+          <div class="chart" id="ch-funnel"></div>
+          <p class="src" style="margin:8px 0 0">Couples : INSEE / INED. Les 18–44 ans et la part iPhone sont des estimations : taux de vie en couple par âge (INSEE), part d'iOS dans le trafic mobile français ≈ 35 % (StatCounter, 2026), corrélée dans le couple.</p>
+        </div>
+        <div class="prose">
+<h3>Les chiffres qui comptent</h3>
+<p><strong>15,4 millions de couples.</strong> 72 % sont mariés, 8 à 9 % pacsés, environ 20 % en union libre.</p>
+<p><strong>445 000 unions officialisées par an</strong> : 248 174 mariages et 197 176 PACS en 2024. Chaque union est un moment où l'on investit dans son couple.</p>
+<p><strong>3 milliards de dollars dépensés dans les apps en 2024</strong> en France (+24 %), 3e marché d'Europe.</p>
+<p><strong>Seulement 20 % des Français se sentent « très aimés »</strong>. La France est 20e sur 29 pays au baromètre Ipsos 2026 de la vie amoureuse.</p>
+</div>
+      </div>
+      <div class="why">
+<div><span class="n">15,4 M</span><div><h3>Un vrai marché</h3><p>15,4 millions de couples. Chaque année, 445 000 se marient ou se pacsent. Et 7 % des 18–79 ans sont en couple sans vivre ensemble (INED, 2024).</p></div></div>
+<div><span class="n">0 pub</span><div><h3>Paired ne se bat pas ici</h3><p>Aucune pub Meta active ciblant la France, 3 800 notes françaises (moins de 2 % du total) et 89e des revenus en Style de vie. L'app est traduite, pas pensée pour la France.</p></div></div>
+<div><span class="n">0</span><div><h3>Aucun acteur français</h3><p>Le mieux placé en France est Couple Joy (70e des revenus en Style de vie), une app roumaine qui n'existe qu'en anglais. Les apps françaises qui marchent sont des jeux coquins (Chouic, Cherry).</p></div></div>
+<div><span class="n">÷ 2</span><div><h3>Une pub deux fois moins chère</h3><p>CPM Meta moyen ≈ 9,7 $ en France contre 19,8 $ dans le monde (SuperAds). TikTok y compte 27,8 millions d'utilisateurs par mois, son premier marché européen.</p></div></div>
+<div><span class="n">70–100 €</span><div><h3>Le prix d'une séance de thérapie</h3><p>Non remboursée, et il en faut 4 à 8. À 5 € par mois pour deux, l'app se vend comme l'entretien du couple, pas comme une thérapie.</p></div></div>
+<div><span class="n">+3 M</span><div><h3>La francophonie en bonus</h3><p>Belgique, Suisse romande, Québec : environ 3 millions de couples de plus, avec le même produit et les mêmes contenus.</p></div></div>
+</div>
+
+      <div class="two" style="margin-top:56px">
+        <div class="panel">
+          <div class="panel-h"><b>Les leaders mondiaux</b><span>CA mensuel estimé sur l'App Store et Google Play, sept. 2026</span></div>
+          <div class="chart" id="ch-world"></div>
+          <p class="src" style="margin:8px 0 0">Sensor Tower, pages publiques, estimations arrondies hors ventes web.</p>
+        </div>
+        <div class="prose">
+<h3>Quatre apps se partagent le marché</h3>
+<p><strong>Paired, Candle, Couple Joy et Cozy Couples</strong> font chacune entre 100 et 300 k$ par mois sur les stores. La plupart des apps lancées en 2020-21 (Agapé, Lovewick, Lasting, Flamme) sont tombées sous 5 k$.</p>
+<p><strong>Le leader s'essouffle.</strong> Paired est estimé entre 650 et 800 k$ par mois en 2023-24, et autour de 300 k$ aujourd'hui.</p>
+<p><strong>Les challengers gagnent avec moins.</strong> Candle (Y Combinator) a atteint 150 k$ de revenu mensuel récurrent en 6 mois avec 2 à 4 personnes. Les nouveaux misent sur les widgets, les séries, un animal virtuel et des prix plus bas.</p>
+</div>
+      </div>
+
+      <h3 style="margin:56px 0 16px">La concurrence vue depuis la France</h3>
+      <div class="tbl-wrap"><table>
+<thead><tr><th>App</th><th>Éditeur</th><th>En français ?</th><th>Notes App Store FR</th><th>Prix FR</th><th>Ce qu'elle fait</th></tr></thead>
+<tbody>
+<tr><td><b>Paired</b></td><td>Better Half Ltd · Royaume-Uni</td><td class="mid">Traduit</td><td class="n">4,6 ★ · 3 800</td><td>14,99 €/mois · annuel jusqu'à 74,99 €</td><td>Question du jour, quiz, jeux, contenus d'experts</td></tr>
+<tr><td><b>Couple Joy</b></td><td>HEARTBIT · Roumanie</td><td class="mid">Fiche FR, app en anglais</td><td class="n">4,8 ★ · 5 300</td><td>14,99 € à 44,99 € + « rachat de série » 0,99–5,99 €</td><td>Questions quotidiennes et séries. 174e en Style de vie</td></tr>
+<tr><td><b>Jeux de Couple &amp; Défis Osés</b></td><td>Chouic · Nantes</td><td class="yes">Oui</td><td class="n">4,8 ★ · 6 000</td><td>4,99 €/sem. · 14,99 €/an</td><td>Action ou vérité coquin</td></tr>
+<tr><td><b>Bloomy</b></td><td>ACE Global · Émirats</td><td class="mid">Fiche FR</td><td class="n">4,3 ★ · 1 600</td><td>4,99 €/sem. · 49,99 €/an</td><td>Défis et quiz épicés. 81e en Divertissement</td></tr>
+<tr><td><b>Cherry</b></td><td>Millefeuille Agency · Chatou</td><td class="yes">Oui</td><td class="n">4,4 ★ · 666</td><td>14,99 €/an · 19,99 € à vie</td><td>Questions et action ou vérité</td></tr>
+<tr><td><b>Agapé</b></td><td>Agape Wellness · États-Unis</td><td class="no">Non</td><td class="n">4,8 ★ · 401</td><td>jusqu'à 69,99 €/an</td><td>Question du jour. Revendique 2 M d'utilisateurs</td></tr>
+<tr><td><b>Flamme</b></td><td>Flamme Inc · États-Unis</td><td class="no">Non</td><td class="n">4,8 ★ · 12</td><td>44,99 €/an</td><td>Questions, quiz et coach IA</td></tr>
+<tr><td><b>Lovewick</b></td><td>Lovewick Inc · États-Unis</td><td class="no">Non</td><td class="n">trop peu</td><td>29,99 €/an</td><td>Questions et jeux de couple</td></tr>
+<tr class="us"><td><b>Votre app</b></td><td>France</td><td class="yes">Natif</td><td class="n">—</td><td>59,99 €/an pour deux</td><td>Question du jour, experts français, PACS, mode à distance</td></tr>
+</tbody>
+</table></div>
+      <p class="src" style="margin-top:10px">Fiches App Store France relevées en octobre 2026. Le nombre de notes françaises est le meilleur indicateur public de traction locale.</p>
+    </section>
+
+    <!-- ============ CA ============ -->
+    <section class="ch" id="ca">
+      <div class="ch-head">
+        <div class="kicker">Chiffre d'affaires</div>
+        <h2>Combien ça peut rapporter en 3 ans</h2>
+        <p class="lede">Un modèle par cohortes mensuelles : le budget pub achète des installs, une partie démarre l'essai, une partie paie, une partie renouvelle. Choisissez un scénario puis bougez les curseurs. Les prix sont TTC, comme sur l'App Store français.</p>
+      </div>
+      <div class="sim">
+        <div class="ctrls panel">
+          <div class="seg" id="sim-seg" role="group" aria-label="Scénario">
+            <button type="button" data-k="prudent">Prudent</button>
+            <button type="button" data-k="realiste">Réaliste</button>
+            <button type="button" data-k="ambitieux">Ambitieux</button>
+          </div>
+          <div id="sim-ctrls" class="ctrls"></div>
+        </div>
+        <div style="min-width:0">
+          <div class="kpis">
+            <div class="kpi"><span class="l">CA année 1</span><span class="v" id="k-y1"></span><span class="s">TTC</span></div>
+            <div class="kpi"><span class="l">CA année 2</span><span class="v" id="k-y2"></span><span class="s">TTC</span></div>
+            <div class="kpi"><span class="l">CA année 3</span><span class="v" id="k-y3"></span><span class="s">dont net encaissé : <b id="k-net"></b></span></div>
+            <div class="kpi"><span class="l">CA du mois 36</span><span class="v" id="k-m36"></span><span class="s" id="k-m36s"></span></div>
+            <div class="kpi"><span class="l">Abonnés actifs au mois 36</span><span class="v" id="k-subs"></span><span class="s" id="k-subs-s"></span></div>
+            <div class="kpi"><span class="l">Résultat cumulé sur 3 ans</span><span class="v" id="k-cash"></span><span class="s">après pub, TVA, Apple et coûts fixes</span></div>
+            <div class="kpi"><span class="l">Rentable (cumul &gt; 0)</span><span class="v" id="k-pay"></span><span class="s">trésorerie cumulée positive</span></div>
+            <div class="kpi"><span class="l">Budget pub total</span><span class="v" id="k-ads"></span><span class="s">sur 36 mois</span></div>
+          </div>
+          <div class="sim-charts">
+            <div class="panel">
+              <div class="panel-h"><b>Chiffre d'affaires mensuel TTC</b><span>Survolez une colonne pour le détail</span></div>
+              <div class="legend"><span><i style="background:var(--bleu)"></i>Nouveaux abonnements</span><span><i style="background:var(--rouge)"></i>Renouvellements</span></div>
+              <div class="chart" id="ch-rev"></div>
+            </div>
+            <div class="panel">
+              <div class="panel-h"><b>Résultat cumulé</b><span>Encaissé net (après TVA 20 % et 15 % d'Apple) moins pub et coûts fixes</span></div>
+              <div class="chart" id="ch-cash"></div>
+            </div>
+            <details class="tablev"><summary>Voir les chiffres en tableau</summary><div class="tbl-wrap" style="margin-top:8px"><table id="sim-table"></table></div></details>
+          </div>
+        </div>
+      </div>
+
+      <div class="two" style="margin-top:28px">
+        <div class="panel">
+          <div class="panel-h"><b>Les trois scénarios côte à côte</b><span>CA TTC par année, réglages par défaut</span></div>
+          <div class="legend"><span><i style="background:var(--ord-1)"></i>Année 1</span><span><i style="background:var(--ord-2)"></i>Année 2</span><span><i style="background:var(--ord-3)"></i>Année 3</span></div>
+          <div class="chart" id="ch-scen"></div>
+        </div>
+        <div class="prose">
+<h3>Ce que disent les trois scénarios</h3>
+<p><strong>Prudent : conversion dans la moyenne du marché.</strong> Environ 2 % des installs finissent par payer, comme la médiane européenne de RevenueCat. Chaque abonné coûte alors plus cher en pub qu'il ne rapporte la première année. Dans ce cas, il ne faut pas acheter de pub : il faut rester sur l'organique et retravailler l'onboarding.</p>
+<p><strong>Réaliste : un onboarding au niveau de Paired.</strong> 3,8 % des installs paient, 80 % en annuel à 59,99 €. On arrive à environ 670 k€ de CA la 3e année et 60 k€ par mois au mois 36. La trésorerie ne descend qu'à −23 k€ au pire, et le cumul passe positif au mois 27.</p>
+<p><strong>Ambitieux : top 10 % et TikTok qui décolle.</strong> 5 % des installs paient et l'organique double l'acquisition payante. Le CA dépasse 270 k€ par mois au bout de 3 ans, soit à peu près ce que Paired fait aujourd'hui sur les stores du monde entier.</p>
+<p class="src">Le seuil à retenir : avec un CPI de 2,40 € et +80 % d'organique, il faut qu'au moins 3,7 % des installs paient pour que le premier paiement rembourse la pub. Benchmarks : RevenueCat State of Subscription Apps 2026 (Europe de l'Ouest : essai → payant 29,7 %, install → payant 2,0 % ; santé &amp; bien-être : install → essai 6,9 %, essai → payant 37,7 %), Adapty 2026.</p>
+</div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN ============ -->
+    <section class="ch" id="plan">
+      <div class="ch-head">
+        <div class="kicker">Plan de lancement</div>
+        <h2>Être prêt pour la Saint-Valentin 2027</h2>
+        <p class="lede">Le 14 février est le pic d'intérêt annuel pour tout ce qui touche au couple. Nous sommes le 13 octobre : il reste 4 mois. C'est assez pour une première version, une base d'abonnés et des créas testées.</p>
+      </div>
+      <div class="plan">
+<div><span class="when">Oct. → déc. 2026</span><h3>Construire le cœur</h3><ul>
+<li>iOS et Android dès le départ : le partenaire n'a pas forcément le même téléphone</li>
+<li>Question du jour + révélation, appairage par lien, série, notifications</li>
+<li>400 questions écrites en français, par thèmes et par ancienneté du couple</li>
+<li>Onboarding d'une quinzaine d'écrans, paywall avec essai de 7 jours</li>
+<li>Données hébergées dans l'UE, consentement explicite</li>
+</ul></div>
+<div><span class="when">Janv. 2027</span><h3>Lancement discret</h3><ul>
+<li>3 à 5 comptes TikTok : « on a répondu à la question du jour »</li>
+<li>20 micro-créateurs couple, payés à la performance avec un code dans l'onboarding</li>
+<li>App Store : « questions couple », « jeu couple », « application couple »</li>
+<li>Objectif : 1 000 couples et un taux install → payant mesuré</li>
+</ul></div>
+<div><span class="when">Févr. 2027</span><h3>Saint-Valentin</h3><ul>
+<li>Budget pub concentré du 1er au 14 février</li>
+<li>« Un an pour deux » à offrir en carte cadeau</li>
+<li>Pack de questions spécial Saint-Valentin</li>
+<li>Presse féminine, podcasts couple, créateurs</li>
+</ul></div>
+<div><span class="when">Mars → déc. 2027</span><h3>Grandir</h3><ul>
+<li>Quiz, jeux, parcours écrits avec des psys et sexologues français</li>
+<li>Mode « à distance » et contenus « après bébé »</li>
+<li>Belgique, Suisse, Québec</li>
+<li>Augmenter la pub seulement si un abonné coûte moins que son premier paiement</li>
+</ul></div>
+</div>
+
+      <h3 style="margin:56px 0 16px">Les risques, et comment les contenir</h3>
+      <div class="risks">
+<div class="risk"><span class="lvl m">Moyen</span><div><h3>Un leader étranger se réveille</h3><p>Paired est déjà traduit, et Couple Joy est 70e en France sans même parler français. Mais Paired voit ses revenus baisser et ne fait aucune pub en France.</p></div><p>Aller vite sur ce qu'un acteur étranger fait mal : références françaises, PACS, humour, créateurs et experts français, prix en euros pensés pour la France.</p></div>
+<div class="risk"><span class="lvl h">Élevé</span><div><h3>La pub ne se rembourse pas</h3><p>À la médiane du marché, un abonné coûte 70 à 180 $ en pub pour 27 à 36 $ de revenu la première année.</p></div><p>N'acheter de pub qu'une fois l'onboarding au-dessus de ~4 % d'installs qui paient. Miser sur l'invitation du partenaire et TikTok organique.</p></div>
+<div class="risk"><span class="lvl m">Moyen</span><div><h3>Données sensibles (RGPD art. 9)</h3><p>Vie sexuelle et orientation sont des données sensibles. Un couple appairé peut révéler l'orientation (CJUE, C-184/20). Grindr a été condamné à 65 M NOK.</p></div><p>Consentement explicite, hébergement UE, chiffrement, aucun SDK publicitaire qui reçoit des événements sensibles, analyse d'impact (AIPD) avant le lancement.</p></div>
+<div class="risk"><span class="lvl m">Moyen</span><div><h3>Lassitude et ruptures</h3><p>Les questions finissent par se répéter, et un couple qui se sépare résilie.</p></div><p>Renouveler sans cesse : quiz, jeux, parcours, saisons. Adapter les questions à l'ancienneté du couple.</p></div>
+<div class="risk"><span class="lvl l">Faible</span><div><h3>Dépendance à Apple</h3><p>15 % de commission avec le programme petites entreprises. Les règles UE ont changé le 1er octobre 2026.</p></div><p>Tester le paiement sur le web (10 à 15 % de commission en UE) pour les renouvellements une fois la base installée.</p></div>
+<div class="risk"><span class="lvl l">Faible</span><div><h3>Droit de la consommation</h3><p>Un faux compte à rebours peut être une pratique commerciale trompeuse. La vente sur le web impose la résiliation en 3 clics.</p></div><p>Des offres limitées qui le sont vraiment, une annulation évidente, des prix TTC affichés.</p></div>
+</div>
+
+      <div class="verdict">
+        <div class="kicker" style="color:inherit;opacity:.7">Verdict</div>
+        <h2>Oui, à une condition : gagner la bataille de la conversion</h2>
+        
+<p>Le marché existe, la place du leader francophone est libre, et le cœur du produit se construit en quelques semaines. Candle l'a prouvé aux États-Unis : 150 k$ de revenu mensuel récurrent en 6 mois, avec une équipe de 2 à 4 personnes. La difficulté n'est pas technique. Elle est dans l'onboarding, le paywall et les créas TikTok : c'est là que Paired a de l'avance.</p>
+<p>Au niveau de conversion de Paired, le scénario réaliste donne environ 670 k€ de CA la 3e année. Avec une vraie traction organique, on approche 3 M€. Sous la moyenne du marché, il faut couper la pub et retravailler le produit avant d'aller plus loin.</p>
+
+      </div>
+    </section>
+  </div>
+
+  <footer class="wrap">
+    <div class="kicker" style="margin-bottom:12px">Sources et méthode</div>
+    <p class="small" style="margin-top:0">Onboarding reconstitué image par image depuis la vidéo du tweet de @jacobrodri_ (12 oct. 2026), filmée sur appkittie. Simulateur : cohortes mensuelles, prix TTC, net = TTC ÷ 1,2 × 0,85 (TVA 20 %, commission Apple 15 %). Le CPI augmente avec le budget (élasticité 0,15). Renouvellement annuel au taux choisi, puis +20 points la 2e année. Chaque install achetée amène aussi l'install gratuite du partenaire, qui ne compte pas comme payeur. Ce sont des ordres de grandeur, pas des prévisions.</p>
+    <ol>
+<li>Tweet de @jacobrodri_ et vidéo appkittie, 12 oct. 2026 : x.com/jacobrodri_/status/2109691886684258401</li>
+<li>Paired : communiqués (paired.com/press), FAQ et page Premium, page experts</li>
+<li>Companies House, Better Half Limited n° 12109880 (dirigeants, augmentation de capital avril 2024)</li>
+<li>TechCrunch, Paired (oct. 2020 et mai 2021) ; Candle (sept. 2025)</li>
+<li>Sensor Tower, pages publiques Paired iOS et Google Play, sept. 2026</li>
+<li>Adapty Paywall Library ; ScreensDesign, Paired (estimations et captures d'onboarding)</li>
+<li>RevenueCat, « Three of the ways that Paired 4x'd revenue » (2023) ; Admiral Media, interview de Jessica Gotti (2025)</li>
+<li>Meta Ad Library, annonceur Paired, relevé du 13 oct. 2026</li>
+<li>JMIR mHealth and uHealth (2025), étude sur les utilisateurs de Paired</li>
+<li>Classements top-grossing App Store (flux RSS iTunes), 13 oct. 2026</li>
+<li>INSEE Première n° 1937, vie en couple : insee.fr/fr/statistiques/6799089</li>
+<li>INSEE, Bilan démographique 2025 : insee.fr/fr/statistiques/8719824</li>
+<li>INED, Mariages et PACS ; enquête ERFI 2 (2026) : ined.fr</li>
+<li>Rapport du 121e Congrès des notaires (2025), nuptialité et conjugalité</li>
+<li>Statbel, IWEPS, OFS, ISQ / Statistique Canada (couples francophones)</li>
+<li>Sensor Tower via CB News, dépenses in-app France 2024</li>
+<li>StatCounter, systèmes mobiles en France, 2026</li>
+<li>RevenueCat, State of Subscription Apps 2025 et 2026</li>
+<li>Adapty, State of In-App Subscriptions 2026</li>
+<li>Ipsos bva / CESI, baromètre de la vie amoureuse, févr. 2026</li>
+<li>SuperAds, CPM Facebook France 2025–2026</li>
+<li>TikTok via Siècle Digital, utilisateurs en Europe, sept. 2025</li>
+<li>Fiches App Store France des apps citées, oct. 2026</li>
+<li>CNIL, données sensibles et recommandations applications mobiles</li>
+<li>CJUE, C-184/20 (2022) ; Borgarting, Grindr (oct. 2025)</li>
+<li>Apple, conditions UE au 1er oct. 2026 ; programme Small Business</li>
+<li>Loi 2022-1158 art. 15, résiliation en 3 clics</li>
+</ol>
+  </footer>
+</main>
+<script>
+
+window.PAIRED_MONTHLY_EUR = 256000; // ≈ 300 k$ (stores, Sensor Tower sept. 2026) au taux de 1,17 $ pour 1 €
+window.FR_COUPLES = 15400000;
+window.WORLD = [
+  { label: "Paired · Royaume-Uni", value: 300, display: "≈ 300 k$", tip: "iOS 200 k$ + Android 100 k$", hl: true },
+  { label: "Candle · États-Unis", value: 220, display: "≈ 220 k$", tip: "iOS 200 k$ + Android 20 k$" },
+  { label: "Couple Joy · Roumanie", value: 220, display: "≈ 220 k$", tip: "iOS 200 k$ + Android 20 k$" },
+  { label: "Cozy Couples · États-Unis", value: 110, display: "≈ 110 k$", tip: "iOS 100 k$ + Android 10 k$" },
+  { label: "SumOne · Corée", value: 50, display: "≈ 50 k$", tip: "iOS" },
+  { label: "Between · Corée", value: 20, display: "≈ 20 k$", tip: "iOS" },
+  { label: "Agapé, Lovewick, Lasting, Flamme", value: 5, display: "< 5 k$ chacune", tip: "iOS" }
+];
+window.MARKET_FUNNEL = [
+  { label: "Couples en France", value: 15400000, display: "15,4 M", tip: "INSEE / INED" },
+  { label: "Couples de 18 à 44 ans", value: 6000000, display: "≈ 6 M", tip: "estimation à partir des taux de vie en couple par âge" },
+  { label: "… dont au moins un iPhone", value: 3000000, display: "≈ 3 M", tip: "estimation : iOS ≈ 35 % du trafic mobile, choix corrélés dans le couple" },
+  { label: "Abonnés au mois 36, scénario réaliste", value: 9600, display: "≈ 9 600", note: "0,3 % de la cible", tip: "sortie du simulateur ci-dessous" }
+];
+window.PRESETS = {
+  prudent:   { name: "Prudent",   budget: 2000,  growth: 0.04, cpi: 2.8, organic: 0.6, trial: 0.07, conv: 0.33, mixY: 0.7,  priceY: 49.99, priceM: 12.99, renewY: 0.30, churnM: 0.18, invite: 0.5, fixed: 1000 },
+  realiste:  { name: "Réaliste",  budget: 6000,  growth: 0.07, cpi: 2.4, organic: 0.8, trial: 0.10, conv: 0.38, mixY: 0.8,  priceY: 59.99, priceM: 14.99, renewY: 0.38, churnM: 0.15, invite: 0.6, fixed: 3000 },
+  ambitieux: { name: "Ambitieux", budget: 12000, growth: 0.08, cpi: 2.2, organic: 1.0, trial: 0.12, conv: 0.42, mixY: 0.85, priceY: 64.99, priceM: 15.99, renewY: 0.44, churnM: 0.12, invite: 0.7, fixed: 8000 }
+};
+
+// Onboarding Paired reconstitué depuis la vidéo appkittie (22 écrans, iOS, oct. 2026)
+window.ONBOARDING = [
+  {
+    phase: "compte", sys: false,
+    title: "Make connection a daily habit",
+    sub: "Celebrate time each day to connect with each other through quick daily activities.",
+    ui: { illus: true, buttons: ["Continue with Apple", "Continue with Google"], link: "Sign up with email" },
+    lever: "Compte créé avant toute question",
+    why: "La promesse est une habitude, pas une thérapie : ça déculpabilise. Le compte se crée en un tap avec Apple. Paired récupère l'email tout de suite, ce qui permet de relancer par mail les personnes qui ne passent pas le paywall.",
+    fr: "« Faites de votre couple un rituel quotidien ». Garder Apple et Google en premier, l'email en lien secondaire."
+  },
+  {
+    phase: "compte", sys: true,
+    title: "Sign in with Apple",
+    sub: "Feuille système iOS : nom + partage ou masquage de l'email.",
+    ui: { sheet: true },
+    lever: "Friction quasi nulle",
+    why: "La feuille Apple inspire confiance et évite le mot de passe. C'est le chemin que prend la majorité des utilisateurs iPhone.",
+    fr: "Identique. Sur Android, Google One Tap."
+  },
+  {
+    phase: "compte", sys: false,
+    title: "Create your Paired account",
+    sub: "Champ email, puis mot de passe (avec suggestion du trousseau iCloud).",
+    ui: { fields: ["Email", "Password"], buttons: ["Next"] },
+    lever: "Effet d'engagement",
+    why: "Chaque info donnée augmente l'investissement de l'utilisateur. Plus il en a mis, moins il abandonne au paywall.",
+    fr: "Remplacer le mot de passe par un lien magique pour supprimer un écran."
+  },
+  {
+    phase: "compte", sys: true,
+    title: "AutoFill Password",
+    sub: "Suggestion de mot de passe fort par iOS.",
+    ui: { sheet: true },
+    lever: "Écran système",
+    why: "Compté dans les 22 écrans, mais c'est iOS qui l'affiche. Paired ne le maîtrise pas.",
+    fr: "Disparaît avec le lien magique."
+  },
+  {
+    phase: "compte", sys: true,
+    title: "Save password?",
+    sub: "iOS propose d'enregistrer l'identifiant dans le trousseau.",
+    ui: { sheet: true },
+    lever: "Écran système",
+    why: "Encore un écran imposé par le choix du mot de passe. Trois écrans sur 22 servent juste à créer le compte par email.",
+    fr: "Disparaît avec le lien magique."
+  },
+  {
+    phase: "profil", sys: false,
+    title: "Welcome to Paired",
+    sub: "To personalise your experience, we'll ask you a few questions.",
+    ui: { illus: true, buttons: ["Continue"], link: "I have my partner's code" },
+    lever: "Annonce la personnalisation",
+    why: "Prévenir qu'on va poser des questions les rend légitimes. Le lien « code de mon partenaire » sort tout de suite le 2e partenaire du tunnel : il rejoint l'abonnement existant sans repasser par le paywall.",
+    fr: "« Quelques questions pour adapter Paired à votre couple »."
+  },
+  {
+    phase: "profil", sys: false,
+    title: "Tell us a little about yourself",
+    sub: "Prénom + date de naissance (facultative).",
+    ui: { fields: ["Your first name", "Your birthday (optional)"], buttons: ["Next"] },
+    lever: "Le prénom devient une arme",
+    why: "Le prénom est réutilisé dès l'écran suivant (« Which gender describes you best, Léa? »). L'onboarding ressemble alors à une conversation, plus à un formulaire.",
+    fr: "Tutoiement ou vouvoiement ? À tester. Le tutoiement colle mieux au sujet intime."
+  },
+  {
+    phase: "profil", sys: false,
+    title: "Which gender describes you best, {name}?",
+    sub: "",
+    ui: { options: ["Female", "Male", "Gender queer / Non-binary", "Other"] },
+    lever: "Segmentation du contenu",
+    why: "Sert à personnaliser les questions et à nourrir les audiences publicitaires (lookalikes Meta/TikTok).",
+    fr: "Inclusif dès le départ : couples LGBT+ compris dans toute la com'."
+  },
+  {
+    phase: "profil", sys: false,
+    title: "Get ready to explore your relationship",
+    sub: "We'll ask a few details about your relationship to provide you with relevant couple activities.",
+    ui: { illus: true, buttons: ["Continue"] },
+    lever: "Respiration",
+    why: "Un écran sans effort casse la monotonie du formulaire et relance l'attention avant le bloc « relation ».",
+    fr: "Illustration de couple variée, ton chaleureux."
+  },
+  {
+    phase: "relation", sys: false,
+    title: "What's your partner's name?",
+    sub: "",
+    ui: { fields: ["Their name"], buttons: ["Next"] },
+    lever: "Le partenaire devient réel",
+    why: "Le prénom du partenaire revient ensuite partout, jusqu'au paywall : « Choose a plan for you & Thomas ». On n'achète plus une app, on achète quelque chose pour son couple.",
+    fr: "Gérer l'élision : « pour toi et Thomas », « d'Inès »."
+  },
+  {
+    phase: "relation", sys: false,
+    title: "How long have you been together as a couple?",
+    sub: "We'll add this to your relationship timeline and send you reminders on your anniversary.",
+    ui: { picker: "September · 22 · 2015" },
+    lever: "Valeur immédiate",
+    why: "La date débloque un bénéfice concret (rappel d'anniversaire) et segmente : un couple de 6 mois ne veut pas les mêmes questions qu'un couple de 12 ans.",
+    fr: "Ajouter la date de PACS ou de mariage : deux anniversaires à fêter, deux rappels."
+  },
+  {
+    phase: "relation", sys: false,
+    title: "How do you define your relationship with {partner}?",
+    sub: "",
+    ui: { options: ["In a relationship", "Engaged", "Married", "In a civil partnership"] },
+    lever: "Segmentation",
+    why: "Personnalise les parcours (fiançailles, mariage, vie de famille).",
+    fr: "Remplacer « civil partnership » par « Pacsé·es ». Près de 200 000 PACS par an en France."
+  },
+  {
+    phase: "relation", sys: false,
+    title: "Do you live together?",
+    sub: "",
+    ui: { options: ["We live together", "We live separately, nearby", "We live separately, long distance"] },
+    lever: "Repère les couples à distance",
+    why: "Les couples à distance ont le plus besoin d'un rituel à distance : c'est le segment le plus motivé à payer.",
+    fr: "Créer un mode « à distance » dédié (fuseaux horaires, Erasmus, expat). Bon angle TikTok."
+  },
+  {
+    phase: "relation", sys: false,
+    title: "Do either of you have kids?",
+    sub: "Let us know if you or your partner have children, either together or from previous relationships.",
+    ui: { options: ["Yes", "No"] },
+    lever: "Empathie + contenu",
+    why: "Les parents ont moins de temps. L'app peut leur proposer des formats plus courts et des thèmes « couple après bébé ».",
+    fr: "Ajouter l'option « famille recomposée » pour adapter le contenu."
+  },
+  {
+    phase: "viral", sys: false,
+    title: "Invite {partner}",
+    sub: "Pair your accounts to answer questions, quizzes, games and more.",
+    ui: { card: "Share your invite link", buttons: ["Invite {partner}"], link: "I have a code from {partner}", skip: true },
+    lever: "La boucle virale",
+    why: "L'app ne sert à rien seul : chaque utilisateur doit faire venir son partenaire. 1 install achetée = ~2 installs, sans payer la seconde. Ça gonfle le classement App Store et fait baisser le coût réel par install.",
+    fr: "Lien d'invitation pensé pour WhatsApp et iMessage avec un aperçu soigné (« Léa t'invite à répondre à la question du jour »)."
+  },
+  {
+    phase: "viral", sys: false,
+    title: "Get notified when {partner} completes an activity",
+    sub: "…or adds a memory to your Timeline.",
+    ui: { notif: true, buttons: ["Yes please"] },
+    lever: "Pré-permission des notifs",
+    why: "Un écran maison avant la pop-up iOS fait monter le taux d'acceptation. Et la notif est sociale (« ton partenaire a répondu ») plutôt qu'un rappel générique : c'est le moteur de la rétention.",
+    fr: "« Être prévenu·e quand Thomas a répondu ». Jamais de rappel culpabilisant."
+  },
+  {
+    phase: "viral", sys: true,
+    title: "“Paired” Would Like to Send You Notifications",
+    sub: "Pop-up système iOS.",
+    ui: { alert: true },
+    lever: "Écran système",
+    why: "Arrive juste après le « Yes please » : l'utilisateur a déjà dit oui une fois, il accepte par cohérence.",
+    fr: "Identique."
+  },
+  {
+    phase: "attrib", sys: false,
+    title: "How did you hear about Paired?",
+    sub: "",
+    ui: { options: ["Friend or family", "TikTok", "Podcast", "YouTube", "Therapist or counselor", "App Store / Play Store", "ChatGPT or similar", "My partner"], skip: true },
+    lever: "Attribution déclarative",
+    why: "Depuis iOS 14 (ATT), le tracking pub est flou. Demander directement mesure TikTok, podcasts et bouche-à-oreille. L'option « ChatGPT » montre que les recommandations des IA comptent déjà.",
+    fr: "Ajouter « Instagram », « Un·e créateur·rice » et un champ code créateur pour payer les influenceurs à la perf."
+  },
+  {
+    phase: "paywall", sys: false,
+    title: "Paired helps couples stay in love",
+    sub: "",
+    ui: { compare: { without: ["Stuck in the day to day routine", "Feeling detached", "Avoiding deeper conversations"], with: ["Getting to know each other deeper", "Feeling connected every day", "Talking openly about sex, finances, conflict"] }, buttons: ["Next"] },
+    lever: "Avant / après",
+    why: "Rappelle la douleur (routine, distance) et l'aspiration juste avant le prix. Le paywall arrive au pic d'envie.",
+    fr: "Formulations françaises naturelles : « la routine a pris le dessus », « on ne se parle plus vraiment »."
+  },
+  {
+    phase: "paywall", sys: false,
+    title: "Choose a plan for you & {partner}",
+    sub: "",
+    ui: { paywall: true },
+    lever: "Ancrage + prix par personne",
+    why: "Le mensuel à 29,99 $ sert de leurre : il fait paraître l'annuel à 79,99 $ « −77 % ». Le prix est affiché par personne (3,33 $ « each »), car 1 abonnement couvre les deux. L'essai de 7 jours est présenté comme déjà activé.",
+    fr: "Prix en euros ronds (59,99 € / an), mention « 1 abonnement pour vous deux ». Afficher le prix TTC comme l'exige le droit français."
+  },
+  {
+    phase: "paywall", sys: false,
+    title: "One time offer! 50% off",
+    sub: "Offer expires in 23:56:34 · Just $79.99 → $39.99/year",
+    ui: { offer: true },
+    lever: "Downsell à la fermeture",
+    why: "Quand on ferme le paywall, une offre −50 % avec compte à rebours s'affiche. Ça récupère une partie des indécis à moindre prix. Le bouton de refus « I don't want it » culpabilise légèrement.",
+    fr: "Attention : un faux compte à rebours peut être une pratique commerciale trompeuse (DGCCRF, directive UE 2005/29). Faire une offre réellement limitée."
+  },
+  {
+    phase: "paywall", sys: true,
+    title: "In-App Purchase",
+    sub: "Paired Premium · 1-week free trial · $39.99 per year",
+    ui: { sheet: true, iap: true },
+    lever: "Paiement en 1 geste",
+    why: "Face ID, aucune carte à saisir. L'essai gratuit enlève la peur de payer : la décision réelle est repoussée à J+7.",
+    fr: "Identique. Rendre l'annulation évidente : c'est la meilleure défense contre les avis 1 étoile."
+  }
+];
+
+window.PHASES = {
+  compte:   { label: "Compte",           n: 0 },
+  profil:   { label: "Profil",           n: 1 },
+  relation: { label: "Relation",         n: 2 },
+  viral:    { label: "Partenaire + notifs", n: 3 },
+  attrib:   { label: "Attribution",      n: 4 },
+  paywall:  { label: "Paywall",          n: 5 }
+};
+
+// Modèle de cohortes mensuel : acquisition payante + organique -> essais -> abonnés
+// Les prix sont TTC (App Store France). Net = TTC / 1,2 (TVA) x (1 - commission store).
+function simulate(p, months) {
+  months = months || 36;
+  var TVA = 1.2, store = p.store != null ? p.store : 0.15;
+  var rows = [];
+  var yearlyCohorts = []; // nouveaux annuels par mois
+  var monthlyCohorts = []; // nouveaux mensuels par mois
+  var cash = 0, payback = null, couplesTotal = 0;
+  for (var t = 0; t < months; t++) {
+    var grow = Math.min(t, p.growMonths != null ? p.growMonths : 24);
+    var budget = p.budget * Math.pow(1 + p.growth, grow);
+    // le CPI monte quand on dépense plus (audiences moins qualifiées)
+    var cpi = p.cpi * Math.pow(budget / p.budget, 0.15);
+    var paidInstalls = budget / cpi;
+    var installs = paidInstalls * (1 + p.organic);
+    couplesTotal += installs;
+    var payers = installs * p.trial * p.conv;
+    var newY = payers * p.mixY, newM = payers * (1 - p.mixY);
+    yearlyCohorts.push(newY); monthlyCohorts.push(newM);
+
+    var grossNewY = newY * p.priceY;
+    var grossNewM = newM * p.priceM;
+    // renouvellements annuels : à t-12 (taux r), à t-24 (r x r2)
+    var renY = 0, activeY = 0;
+    for (var k = 0; k <= t; k++) {
+      var age = t - k, c = yearlyCohorts[k];
+      var r1 = p.renewY, r2 = Math.min(0.9, p.renewY + 0.2);
+      var surv = age < 12 ? 1 : age < 24 ? r1 : r1 * r2;
+      activeY += c * surv;
+      if (age === 12) renY += c * r1 * p.priceY;
+      if (age === 24) renY += c * r1 * r2 * p.priceY;
+    }
+    // mensuels : survie géométrique, le 1er paiement compte comme nouveau
+    var renM = 0, activeM = 0;
+    for (var j = 0; j <= t; j++) {
+      var a = t - j, s = monthlyCohorts[j] * Math.pow(1 - p.churnM, a);
+      activeM += s;
+      if (a > 0) renM += s * p.priceM;
+    }
+    var grossNew = grossNewY + grossNewM, grossRen = renY + renM;
+    var gross = grossNew + grossRen;
+    var net = gross / TVA * (1 - store);
+    var fixed = p.fixed || 0;
+    var profit = net - budget - fixed;
+    cash += profit;
+    if (payback === null && cash > 0 && t > 0) payback = t + 1;
+    // ARR "run-rate" : valeur annualisée des abonnés actifs, TTC
+    var arr = activeY * p.priceY + activeM * p.priceM * 12;
+    rows.push({ m: t + 1, budget: budget, cpi: cpi, installs: installs, partner: installs * p.invite,
+      payers: payers, grossNew: grossNew, grossRen: grossRen, gross: gross, net: net,
+      netNew: grossNew / TVA * (1 - store), netRen: grossRen / TVA * (1 - store),
+      profit: profit, cash: cash, activeY: activeY, activeM: activeM, active: activeY + activeM, arr: arr });
+  }
+  return { rows: rows, payback: payback, couplesTotal: couplesTotal };
+}
+window.simulate = simulate;
+
+(function () {
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var fmtEUR = function (v, d) {
+    var a = Math.abs(v), s = v < 0 ? "−" : "";
+    if (a >= 1e6) return s + (a / 1e6).toLocaleString("fr-FR", { maximumFractionDigits: d == null ? 2 : d }) + " M€";
+    if (a >= 1e3) return s + Math.round(a / 1e3).toLocaleString("fr-FR") + " k€";
+    return s + Math.round(a).toLocaleString("fr-FR") + " €";
+  };
+  var fmtN = function (v) { return Math.round(v).toLocaleString("fr-FR"); };
+
+  /* ================= question du jour ================= */
+  var QS = [
+    ["Quel petit geste de l'autre te fait te sentir le plus aimé·e ?", "Quand tu me fais un café sans que je demande, les matins où je suis en retard."],
+    ["Si on partait demain, sans aucune contrainte, ce serait où ?", "Lisbonne. Trois jours, pas de réveil, et des pastéis de nata au petit-déj."],
+    ["Quel sujet on évite un peu trop, selon toi ?", "L'argent. On n'en parle que quand il y a un problème."],
+    ["Quel souvenir de nous te fait encore sourire ?", "La panne de voiture en Bretagne, et la crêperie où on a attendu la dépanneuse pendant trois heures."],
+    ["Qu'est-ce que tu aimerais qu'on fasse plus souvent ?", "Cuisiner ensemble le dimanche, même si c'est raté."]
+  ];
+  var qi = 0, streak = 41;
+  var qText = $("#q-text"), meIn = $("#me-in"), meSaid = $("#me-said"), them = $("#them"), themSaid = $("#them-said"),
+      send = $("#q-send"), next = $("#q-next"), streakEl = $("#streak");
+  function loadQ() {
+    qText.textContent = QS[qi][0];
+    themSaid.textContent = QS[qi][1];
+    them.classList.add("locked");
+    meIn.hidden = false; meSaid.hidden = true; meIn.value = "";
+    send.hidden = false; next.hidden = true; send.disabled = true;
+    streakEl.textContent = "Série : " + streak + " jours";
+  }
+  meIn.addEventListener("input", function () { send.disabled = meIn.value.trim().length < 2; });
+  send.addEventListener("click", function () {
+    meSaid.textContent = meIn.value.trim();
+    meIn.hidden = true; meSaid.hidden = false;
+    them.classList.remove("locked");
+    send.hidden = true; next.hidden = false;
+    streak += 1; streakEl.textContent = "Série : " + streak + " jours";
+  });
+  next.addEventListener("click", function () { qi = (qi + 1) % QS.length; loadQ(); meIn.focus(); });
+  loadQ();
+
+  /* ================= onboarding ================= */
+  var OB = window.ONBOARDING, PH = window.PHASES;
+  var PH_COLORS = { compte: "var(--ink-3)", profil: "var(--ord-1)", relation: "var(--ord-2)", viral: "var(--rouge)", attrib: "var(--warn)", paywall: "var(--bleu)" };
+  var NAME = "Léa", PARTNER = "Thomas";
+  var fill = function (s) { return String(s || "").replace(/\{name\}/g, NAME).replace(/\{partner\}/g, PARTNER); };
+  var couple = '<svg viewBox="0 0 120 90" aria-hidden="true"><circle cx="46" cy="45" r="32" fill="var(--bleu)" opacity=".9"/><circle cx="74" cy="45" r="32" fill="var(--rouge)" opacity=".85" style="mix-blend-mode:multiply"/></svg>';
+  function renderScreen(s) {
+    var u = s.ui, h = '<div class="island"></div><div class="sbar"><span>9:41</span><span>●●● ▮</span></div><div class="scr-body">';
+    if (u.skip) h += '<div class="scr-skip">Skip</div>';
+    var sheetLike = u.sheet || u.alert;
+    if (!sheetLike) {
+      if (u.offer) {
+        h += '<div class="off-big">50% off</div><div class="off-timer">Offer expires in 23:56:34</div>' +
+             '<div class="scr-title" style="text-align:center">One time offer!</div>' +
+             '<div class="off-price">Just <s>$79.99</s> <b>$39.99/year</b></div>' +
+             '<div class="scr-sub" style="text-align:center">Start a 7-day free trial today, and save an extra 50%. Offer only valid today.</div>' +
+             '<div class="scr-spacer"></div><div class="scr-btn">Get 7 days free and save</div><div class="scr-link">I don\'t want it</div>';
+      } else if (u.paywall) {
+        h += '<div class="scr-title" style="text-align:center">' + esc(fill(s.title)) + '</div>' +
+             '<div class="pw-trial"><i></i>7-day <b>FREE</b> trial enabled</div>' +
+             '<div class="pw-plan sel"><span class="pw-tag">MOST POPULAR · SAVE 77%</span><b>Yearly</b><b class="r">$3.33</b><span>12 mo · $79.99</span><span class="r">each a month</span></div>' +
+             '<div class="pw-plan"><b>Monthly</b><b class="r">$15.00</b><span>1 mo · $29.99</span><span class="r">each a month</span></div>' +
+             '<div class="pw-stars"><span>★★★★★</span><br>292k 5-star reviews</div>' +
+             '<div class="scr-spacer"></div><div class="scr-btn">Start your 7-day free trial</div><div class="scr-sub" style="text-align:center">Cancel your plan anytime.</div>';
+      } else {
+        h += '<div class="scr-title">' + esc(fill(s.title)) + '</div>';
+        if (s.sub && !u.picker) h += '<div class="scr-sub">' + esc(fill(s.sub)) + '</div>';
+        if (u.picker) h += '<div class="scr-sub">' + esc(s.sub) + '</div><div class="scr-picker"><div><span>August</span><b>September</b><span>October</span></div><div><span>21</span><b>22</b><span>23</span></div><div><span>2014</span><b>2015</b><span>2016</span></div></div>';
+        if (u.illus) h += '<div class="scr-illus">' + couple + '</div>';
+        if (u.fields) h += '<div class="scr-opts">' + u.fields.map(function (f, i) { return '<div class="scr-field"><small>' + esc(f) + '</small><span>' + (i === 0 ? esc(/partner|their/i.test(f) ? PARTNER : /email/i.test(f) ? "lea@exemple.fr" : NAME) : "&nbsp;") + '</span></div>'; }).join("") + '</div>';
+        if (u.options) h += '<div class="scr-opts">' + u.options.map(function (o, i) { return '<div class="scr-opt' + (i === 0 ? " sel" : "") + '">' + esc(o) + '</div>'; }).join("") + '</div>';
+        if (u.card) h += '<div class="scr-spacer"></div><div class="scr-card">' + couple.replace('viewBox="0 0 120 90"', 'viewBox="0 0 120 90" width="90"') + esc(u.card) + '</div>';
+        if (u.notif) h += '<div class="scr-spacer"></div><div class="scr-notif"><b>Paired</b><span>' + PARTNER + ' answered today\'s question. Answer to reveal it!</span></div>';
+        if (u.compare) h += '<div class="scr-cmp"><div class="wo"><b>Without Paired</b>' + u.compare.without.map(function (x) { return '<span>– ' + esc(x) + '</span>'; }).join("") + '</div><div class="wi"><b>With Paired</b>' + u.compare.with.map(function (x) { return '<span>✓ ' + esc(x) + '</span>'; }).join("") + '</div></div>';
+        h += '<div class="scr-spacer"></div>';
+        if (u.buttons) h += u.buttons.map(function (b, i) { return '<div class="scr-btn' + (i > 0 ? " alt" : "") + '">' + esc(fill(b)) + '</div>'; }).join("");
+        if (u.link) h += '<div class="scr-link">' + esc(fill(u.link)) + '</div>';
+      }
+    }
+    h += '</div>';
+    if (sheetLike) {
+      h += '<div class="dim"></div>';
+      if (u.alert) {
+        h += '<div class="alert"><b>' + esc(s.title) + '</b><span>Notifications may include alerts, sounds, and icon badges.</span><div class="acts"><span>Don\'t Allow</span><span>Allow</span></div></div>';
+      } else if (u.iap) {
+        h += '<div class="sheet"><div class="bar"></div><div class="t">In-App Purchase</div><div class="scr-field"><small>Paired Premium</small><span>1-week free trial, then $39.99 per year</span></div><div class="row"></div><div class="scr-btn" style="background:var(--bleu)">Subscribe</div></div>';
+      } else {
+        h += '<div class="sheet"><div class="bar"></div><div class="t">' + esc(s.title) + '</div><div class="row"></div><div class="row"></div><div class="row" style="width:70%"></div><div class="scr-btn" style="background:var(--bleu)">Continue</div></div>';
+      }
+    }
+    if (s.sys) h += '<span class="sys-tag">Écran iOS</span>';
+    return h;
+  }
+  var obi = 0, scr = $("#ob-screen"), strip = $("#ob-strip");
+  OB.forEach(function (s, i) {
+    var b = document.createElement("button");
+    b.type = "button";
+    b.style.setProperty("--c", PH_COLORS[s.phase]);
+    if (s.sys) b.className = "sys";
+    b.setAttribute("aria-label", "Écran " + (i + 1) + " : " + fill(s.title));
+    b.title = (i + 1) + ". " + fill(s.title);
+    b.addEventListener("click", function () { showOB(i); });
+    strip.appendChild(b);
+  });
+  var legend = $("#ob-legend");
+  var counts = {};
+  OB.forEach(function (s) { counts[s.phase] = (counts[s.phase] || 0) + 1; });
+  legend.innerHTML = Object.keys(PH).map(function (k) { return '<span><i style="background:' + PH_COLORS[k] + '"></i>' + PH[k].label + ' · ' + counts[k] + '</span>'; }).join("") + '<span><i class="sysk"></i>hachuré = écran iOS imposé</span>';
+  function showOB(i) {
+    obi = (i + OB.length) % OB.length;
+    var s = OB[obi];
+    scr.innerHTML = renderScreen(s);
+    $("#ob-phase").innerHTML = '<i style="background:' + PH_COLORS[s.phase] + '"></i>' + PH[s.phase].label;
+    $("#ob-count").textContent = "Écran " + (obi + 1) + " sur " + OB.length + (s.sys ? " · écran système iOS" : "");
+    $("#ob-lever").textContent = s.lever;
+    $("#ob-why").textContent = fill(s.why);
+    $("#ob-fr").textContent = fill(s.fr);
+    $$("button", strip).forEach(function (b, k) { b.classList.toggle("on", k === obi); });
+  }
+  $("#ob-prev").addEventListener("click", function () { stopPlay(); showOB(obi - 1); });
+  $("#ob-next").addEventListener("click", function () { stopPlay(); showOB(obi + 1); });
+  var playT = null, playBtn = $("#ob-play");
+  function stopPlay() { if (playT) { clearInterval(playT); playT = null; playBtn.textContent = "Lecture auto"; } }
+  playBtn.addEventListener("click", function () {
+    if (playT) return stopPlay();
+    playBtn.textContent = "Pause";
+    playT = setInterval(function () { showOB(obi + 1); }, 3200);
+  });
+  $("#onboarding").addEventListener("keydown", function (e) {
+    if (e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT") return;
+    if (e.key === "ArrowRight") { stopPlay(); showOB(obi + 1); }
+    if (e.key === "ArrowLeft") { stopPlay(); showOB(obi - 1); }
+  });
+  showOB(0);
+
+  /* ================= petits outils de graphique ================= */
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  // barre avec bout arrondi (4px) côté donnée, carrée côté ligne de base
+  function barPath(x, y, w, h, horizontal) {
+    var r = Math.min(4, horizontal ? h / 2 : w / 2, horizontal ? w : h);
+    if (h <= 0 || w <= 0) return "";
+    if (horizontal) return "M" + x + "," + y + "h" + (w - r) + "a" + r + "," + r + " 0 0 1 " + r + "," + r + "v" + (h - 2 * r) + "a" + r + "," + r + " 0 0 1 -" + r + "," + r + "h-" + (w - r) + "z";
+    return "M" + x + "," + (y + h) + "v-" + (h - r) + "a" + r + "," + r + " 0 0 1 " + r + ",-" + r + "h" + (w - 2 * r) + "a" + r + "," + r + " 0 0 1 " + r + "," + r + "v" + (h - r) + "z";
+  }
+  function niceMax(v) { if (v <= 0) return 1; var p = Math.pow(10, Math.floor(Math.log10(v))), n = v / p; var m = n <= 1 ? 1 : n <= 2 ? 2 : n <= 2.5 ? 2.5 : n <= 5 ? 5 : 10; return m * p; }
+  function tipFor(box) { var t = box.querySelector(".tip"); if (!t) { t = document.createElement("div"); t.className = "tip"; box.appendChild(t); } return t; }
+  function placeTip(box, tip, x, y, html) {
+    tip.innerHTML = html; tip.classList.add("show");
+    var bw = box.clientWidth, tw = tip.offsetWidth;
+    var cx = Math.max(tw / 2 + 4, Math.min(bw - tw / 2 - 4, x));
+    tip.style.left = cx + "px"; tip.style.top = y + "px";
+  }
+
+  // barres horizontales : [{label, value, display, color, note}]
+  function hbars(box, data, opts) {
+    opts = opts || {};
+    box.innerHTML = "";
+    var W = Math.max(300, box.clientWidth || 640), rowH = opts.rowH || 50, barH = Math.min(24, rowH - 24), L = opts.left || 0, top = 6;
+    var H = top + data.length * rowH + 4;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": opts.aria || "" }, box);
+    var max = opts.max || Math.max.apply(null, data.map(function (d) { return d.value; }));
+    var avail = W - L - (opts.right || 84);
+    var tip = tipFor(box);
+    data.forEach(function (d, i) {
+      var y = top + i * rowH;
+      var t = el("text", { x: 0, y: y + 13, class: "lbl" }, svg); t.textContent = d.label;
+      if (d.note) { var ts = el("tspan", { class: "", dx: 8 }, t); ts.textContent = d.note; ts.setAttribute("style", "font-weight:400;fill:var(--ink-3);font-size:11.5px"); }
+      var w = Math.max(3, d.value / max * avail);
+      var by = y + 18;
+      el("path", { d: barPath(L, by, w, barH, true), fill: d.color }, svg);
+      var v = el("text", { x: L + w + 8, y: by + barH / 2 + 4, class: "lbl" }, svg); v.textContent = d.display;
+      var hit = el("rect", { x: 0, y: y, width: W, height: rowH, fill: "transparent" }, svg);
+      hit.addEventListener("mousemove", function (e) {
+        var r = box.getBoundingClientRect();
+        placeTip(box, tip, e.clientX - r.left, (by / H) * box.clientHeight, '<i style="background:' + d.color + '"></i>' + esc(d.label) + " : <b>" + esc(d.display) + "</b>" + (d.tip ? "<br>" + esc(d.tip) : ""));
+      });
+      hit.addEventListener("mouseleave", function () { tip.classList.remove("show"); });
+    });
+  }
+  window.hbars = hbars;
+
+  // colonnes empilées mensuelles : series [{key,label,color}], rows [{m, key:value...}]
+  function stackCols(box, rows, series, opts) {
+    opts = opts || {};
+    box.innerHTML = "";
+    var W = Math.max(300, box.clientWidth || 760), H = Math.round(Math.min(320, Math.max(220, W * 0.42))), L = 58, R = 10, T = 12, B = 30;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": opts.aria || "" }, box);
+    var totals = rows.map(function (r) { return series.reduce(function (a, s) { return a + Math.max(0, r[s.key]); }, 0); });
+    var max = niceMax(Math.max.apply(null, totals) * 1.05);
+    var pw = W - L - R, ph = H - T - B, n = rows.length, band = pw / n, bw = Math.min(24, band - 2);
+    for (var g = 0; g <= 4; g++) {
+      var gy = T + ph - g / 4 * ph;
+      el("line", { x1: L, x2: W - R, y1: gy, y2: gy, class: "grid" }, svg);
+      var tx = el("text", { x: L - 8, y: gy + 4, "text-anchor": "end" }, svg); tx.textContent = fmtEUR(max * g / 4, 1);
+    }
+    var tip = tipFor(box);
+    rows.forEach(function (r, i) {
+      var x = L + i * band + (band - bw) / 2, acc = 0;
+      series.forEach(function (s, si) {
+        var v = Math.max(0, r[s.key]); if (!v) return;
+        var h = v / max * ph, y = T + ph - acc / max * ph - h;
+        var gap = acc > 0 ? 2 : 0; // 2px d'air entre segments empilés
+        var isTop = series.slice(si + 1).every(function (s2) { return !(r[s2.key] > 0); });
+        if (isTop) el("path", { d: barPath(x, y, bw, Math.max(0, h - gap), false), fill: s.color }, svg);
+        else el("rect", { x: x, y: y, width: bw, height: Math.max(0, h - gap), fill: s.color }, svg);
+        acc += v;
+      });
+      if ((i + 1) % (W < 480 ? 12 : 6) === 0 || i === 0) { var lx = el("text", { x: x + bw / 2, y: H - 10, "text-anchor": "middle" }, svg); lx.textContent = "M" + r.m; }
+      var hit = el("rect", { x: L + i * band, y: T, width: band, height: ph, fill: "transparent" }, svg);
+      hit.addEventListener("mousemove", function () {
+        placeTip(box, tip, x + bw / 2, T + ph - totals[i] / max * ph,
+          "<b>Mois " + r.m + "</b> · " + fmtEUR(totals[i]) + "<br>" + series.map(function (s) { return '<i style="background:' + s.color + '"></i>' + s.label + " : " + fmtEUR(r[s.key]); }).join("<br>"));
+      });
+      hit.addEventListener("mouseleave", function () { tip.classList.remove("show"); });
+    });
+    el("line", { x1: L, x2: W - R, y1: T + ph, y2: T + ph, class: "axis" }, svg);
+  }
+
+  // courbe avec zone + ligne zéro, crosshair
+  function lineArea(box, rows, key, color, opts) {
+    opts = opts || {};
+    box.innerHTML = "";
+    var W = Math.max(300, box.clientWidth || 760), H = Math.round(Math.min(240, Math.max(180, W * 0.3))), L = 58, R = 14, T = 18, B = 30;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": opts.aria || "" }, box);
+    var vals = rows.map(function (r) { return r[key]; });
+    var hi = Math.max(0, Math.max.apply(null, vals)), lo = Math.min(0, Math.min.apply(null, vals));
+    var span = niceMax((hi - lo) * 1.08 || 1), step = span / 4;
+    var top = Math.ceil(hi / step) * step, bot = top - 4 * step; if (bot > lo) { bot -= step; }
+    var pw = W - L - R, ph = H - T - B;
+    var X = function (i) { return L + (rows.length === 1 ? pw / 2 : i / (rows.length - 1) * pw); };
+    var Y = function (v) { return T + (top - v) / (top - bot) * ph; };
+    for (var v = bot; v <= top + 1e-6; v += step) {
+      el("line", { x1: L, x2: W - R, y1: Y(v), y2: Y(v), class: Math.abs(v) < 1e-6 ? "axis" : "grid" }, svg);
+      var tx = el("text", { x: L - 8, y: Y(v) + 4, "text-anchor": "end" }, svg); tx.textContent = fmtEUR(v, 1);
+    }
+    var d = rows.map(function (r, i) { return (i ? "L" : "M") + X(i).toFixed(1) + "," + Y(r[key]).toFixed(1); }).join("");
+    el("path", { d: d + "L" + X(rows.length - 1) + "," + Y(0) + "L" + X(0) + "," + Y(0) + "Z", fill: color, opacity: ".1" }, svg);
+    el("path", { d: d, fill: "none", stroke: color, "stroke-width": 2, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
+    rows.forEach(function (r, i) { if ((i + 1) % (W < 480 ? 12 : 6) === 0 || i === 0) { var lx = el("text", { x: X(i), y: H - 10, "text-anchor": "middle" }, svg); lx.textContent = "M" + r.m; } });
+    var last = rows[rows.length - 1];
+    el("circle", { cx: X(rows.length - 1), cy: Y(last[key]), r: 5, fill: color, stroke: "var(--card)", "stroke-width": 2 }, svg);
+    if (opts.mark) { var mi = opts.mark - 1; el("circle", { cx: X(mi), cy: Y(rows[mi][key]), r: 5, fill: "var(--card)", stroke: color, "stroke-width": 2 }, svg); var mt = el("text", { x: X(mi), y: Y(rows[mi][key]) - 12, "text-anchor": "middle", class: "lbl" }, svg); mt.textContent = opts.markLabel; }
+    var cross = el("line", { x1: 0, x2: 0, y1: T, y2: T + ph, stroke: "var(--ink-3)", "stroke-width": 1, opacity: 0 }, svg);
+    var dot = el("circle", { r: 5, fill: color, stroke: "var(--card)", "stroke-width": 2, opacity: 0 }, svg);
+    var tip = tipFor(box);
+    var hit = el("rect", { x: L, y: T, width: pw, height: ph, fill: "transparent" }, svg);
+    hit.addEventListener("mousemove", function (e) {
+      var rect = svg.getBoundingClientRect(), sc = 1;
+      var mx = (e.clientX - rect.left), i = Math.round((mx - L) / pw * (rows.length - 1));
+      i = Math.max(0, Math.min(rows.length - 1, i));
+      cross.setAttribute("x1", X(i)); cross.setAttribute("x2", X(i)); cross.setAttribute("opacity", .5);
+      dot.setAttribute("cx", X(i)); dot.setAttribute("cy", Y(rows[i][key])); dot.setAttribute("opacity", 1);
+      placeTip(box, tip, X(i) * sc, Y(rows[i][key]) * sc, "<b>Mois " + rows[i].m + "</b><br>" + (opts.label || "") + " : " + fmtEUR(rows[i][key]));
+    });
+    hit.addEventListener("mouseleave", function () { tip.classList.remove("show"); cross.setAttribute("opacity", 0); dot.setAttribute("opacity", 0); });
+  }
+
+  // colonnes groupées ordinales (scénarios x années)
+  function groupCols(box, groups, keys, colors, labels) {
+    box.innerHTML = "";
+    var W = Math.max(300, box.clientWidth || 760), H = 260, L = 58, R = 10, T = 22, B = 30;
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img" }, box);
+    var max = niceMax(Math.max.apply(null, groups.map(function (g) { return Math.max.apply(null, keys.map(function (k) { return g[k]; })); })) * 1.08);
+    var pw = W - L - R, ph = H - T - B, gb = pw / groups.length, bw = Math.min(24, (gb - 16) / keys.length - 2), gap = 2;
+    for (var g = 0; g <= 4; g++) { var gy = T + ph - g / 4 * ph; el("line", { x1: L, x2: W - R, y1: gy, y2: gy, class: "grid" }, svg); var tx = el("text", { x: L - 8, y: gy + 4, "text-anchor": "end" }, svg); tx.textContent = fmtEUR(max * g / 4, 1); }
+    var tip = tipFor(box);
+    groups.forEach(function (gr, gi) {
+      var gw = keys.length * bw + (keys.length - 1) * gap, x0 = L + gi * gb + (gb - gw) / 2;
+      keys.forEach(function (k, ki) {
+        var h = gr[k] / max * ph, x = x0 + ki * (bw + gap), y = T + ph - h;
+        el("path", { d: barPath(x, y, bw, h, false), fill: colors[ki] }, svg);
+        if (ki === keys.length - 1) { var vt = el("text", { x: x + bw / 2, y: y - 6, "text-anchor": "middle", class: "lbl" }, svg); vt.textContent = fmtEUR(gr[k], 1); }
+      });
+      var lt = el("text", { x: x0 + gw / 2, y: H - 10, "text-anchor": "middle" }, svg); lt.textContent = gr.label;
+      var hit = el("rect", { x: L + gi * gb, y: T, width: gb, height: ph, fill: "transparent" }, svg);
+      hit.addEventListener("mousemove", function () {
+        placeTip(box, tip, x0 + gw / 2, T + 10, "<b>" + esc(gr.label) + "</b><br>" + keys.map(function (k, ki) { return '<i style="background:' + colors[ki] + '"></i>' + labels[ki] + " : " + fmtEUR(gr[k]); }).join("<br>"));
+      });
+      hit.addEventListener("mouseleave", function () { tip.classList.remove("show"); });
+    });
+    el("line", { x1: L, x2: W - R, y1: T + ph, y2: T + ph, class: "axis" }, svg);
+  }
+
+  var css = function (v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); };
+
+  /* ================= graphiques statiques ================= */
+  function drawStatic() {
+    hbars($("#ch-price"), [
+      { label: "Mensuel × 12", value: 359.88, display: "359,88 $", note: "15,00 $ / pers. / mois", color: css("--ord-1") },
+      { label: "Annuel (prix affiché)", value: 79.99, display: "79,99 $", note: "3,33 $ / pers. / mois", color: css("--ord-2") },
+      { label: "Offre de rattrapage (−50 %)", value: 39.99, display: "39,99 $", note: "1,67 $ / pers. / mois", color: css("--ord-3") }
+    ], { aria: "Coût sur un an selon l'offre Paired" });
+    if (window.WORLD) hbars($("#ch-world"), window.WORLD.map(function (d) { return Object.assign({ color: css(d.hl ? "--bleu" : "--ord-1") }, d); }), { aria: "CA mensuel des principales apps de couple", rowH: 46 });
+    if (window.MARKET_FUNNEL) hbars($("#ch-funnel"), window.MARKET_FUNNEL.map(function (d, i) { return Object.assign({ color: css(["--ord-1", "--ord-1", "--ord-2", "--ord-3"][i] || "--ord-3") }, d); }), { aria: "Du marché total au marché visé" });
+  }
+
+  /* ================= simulateur ================= */
+  var PRESETS = window.PRESETS;
+  var FIELDS = [
+    { k: "budget", grp: "Acquisition", label: "Budget pub au départ", min: 1000, max: 40000, step: 500, f: function (v) { return fmtEUR(v); }, help: "par mois, Meta + TikTok" },
+    { k: "growth", grp: "Acquisition", label: "Hausse du budget", min: 0, max: 0.12, step: 0.005, f: function (v) { return "+" + (v * 100).toFixed(1).replace(".", ",") + " %/mois"; }, help: "pendant 24 mois, puis budget stable" },
+    { k: "cpi", grp: "Acquisition", label: "Coût par install (CPI)", min: 0.8, max: 5, step: 0.1, f: function (v) { return v.toFixed(2).replace(".", ",") + " €"; }, help: "il monte tout seul quand le budget grossit" },
+    { k: "organic", grp: "Acquisition", label: "Installs organiques en plus", min: 0, max: 1.5, step: 0.05, f: function (v) { return "+" + Math.round(v * 100) + " %"; }, help: "TikTok organique, ASO, bouche-à-oreille" },
+    { k: "trial", grp: "Conversion", label: "Install → essai gratuit", min: 0.03, max: 0.25, step: 0.005, f: function (v) { return (v * 100).toFixed(1).replace(".", ",") + " %"; } },
+    { k: "conv", grp: "Conversion", label: "Essai → abonné payant", min: 0.15, max: 0.65, step: 0.01, f: function (v) { return Math.round(v * 100) + " %"; } },
+    { k: "mixY", grp: "Conversion", label: "Part d'abonnés annuels", min: 0.3, max: 0.95, step: 0.05, f: function (v) { return Math.round(v * 100) + " %"; } },
+    { k: "priceY", grp: "Prix (TTC)", label: "Prix annuel", min: 29.99, max: 99.99, step: 5, f: function (v) { return v.toFixed(2).replace(".", ",") + " €"; } },
+    { k: "priceM", grp: "Prix (TTC)", label: "Prix mensuel", min: 4.99, max: 29.99, step: 1, f: function (v) { return v.toFixed(2).replace(".", ",") + " €"; } },
+    { k: "renewY", grp: "Rétention", label: "Renouvellement annuel", min: 0.1, max: 0.7, step: 0.01, f: function (v) { return Math.round(v * 100) + " %"; }, help: "part des annuels qui repaient l'année suivante" },
+    { k: "churnM", grp: "Rétention", label: "Désabonnement mensuel", min: 0.05, max: 0.35, step: 0.01, f: function (v) { return Math.round(v * 100) + " %"; } },
+    { k: "fixed", grp: "Coûts fixes", label: "Coûts fixes", min: 0, max: 20000, step: 500, f: function (v) { return fmtEUR(v); }, help: "par mois : outils, serveurs, contenu, freelances" }
+  ];
+  var state = Object.assign({}, PRESETS.realiste), cur = "realiste";
+  var host = $("#sim-ctrls"), groups = {};
+  FIELDS.forEach(function (f) {
+    if (!groups[f.grp]) { var g = document.createElement("div"); g.className = "grp"; g.innerHTML = "<b>" + f.grp + "</b>"; host.appendChild(g); groups[f.grp] = g; }
+    var w = document.createElement("div"); w.className = "sl";
+    w.innerHTML = '<label for="s-' + f.k + '">' + f.label + ' <output id="o-' + f.k + '"></output></label><input type="range" id="s-' + f.k + '" min="' + f.min + '" max="' + f.max + '" step="' + f.step + '">' + (f.help ? "<small>" + f.help + "</small>" : "");
+    groups[f.grp].appendChild(w);
+    var inp = $("input", w);
+    inp.addEventListener("input", function () { state[f.k] = parseFloat(inp.value); setSeg(null); run(); });
+  });
+  function syncInputs() { FIELDS.forEach(function (f) { $("#s-" + f.k).value = state[f.k]; $("#o-" + f.k).textContent = f.f(state[f.k]); }); }
+  function setSeg(k) { cur = k; $$("#sim-seg button").forEach(function (b) { b.classList.toggle("on", b.dataset.k === k); }); }
+  $$("#sim-seg button").forEach(function (b) { b.addEventListener("click", function () { state = Object.assign({}, PRESETS[b.dataset.k]); setSeg(b.dataset.k); syncInputs(); run(); }); });
+  var yearSum = function (rows, k, y) { return rows.slice(y * 12, y * 12 + 12).reduce(function (a, r) { return a + r[k]; }, 0); };
+
+  function run() {
+    FIELDS.forEach(function (f) { $("#o-" + f.k).textContent = f.f(state[f.k]); });
+    var res = window.simulate(state, 36), rows = res.rows;
+    var y = [0, 1, 2].map(function (i) { return yearSum(rows, "gross", i); });
+    var last = rows[35];
+    $("#k-y1").textContent = fmtEUR(y[0]); $("#k-y2").textContent = fmtEUR(y[1]); $("#k-y3").textContent = fmtEUR(y[2]);
+    $("#k-m36").textContent = fmtEUR(last.gross);
+    $("#k-m36s").textContent = "soit " + Math.round(last.gross / window.PAIRED_MONTHLY_EUR * 100) + " % du CA mensuel de Paired (monde)";
+    $("#k-subs").textContent = fmtN(last.active);
+    $("#k-subs-s").textContent = fmtN(res.couplesTotal) + " couples ont installé l'app en 3 ans (" + (res.couplesTotal / window.FR_COUPLES * 100).toFixed(1).replace(".", ",") + " % des couples)";
+    var cash = last.cash;
+    var kc = $("#k-cash"); kc.textContent = fmtEUR(cash); kc.className = "v " + (cash >= 0 ? "pos" : "neg");
+    $("#k-pay").textContent = res.payback ? "Mois " + res.payback : "Pas en 36 mois";
+    $("#k-net").textContent = fmtEUR(yearSum(rows, "net", 2));
+    $("#k-ads").textContent = fmtEUR(rows.reduce(function (a, r) { return a + r.budget; }, 0));
+    stackCols($("#ch-rev"), rows, [
+      { key: "grossNew", label: "Nouveaux abonnements", color: css("--bleu") },
+      { key: "grossRen", label: "Renouvellements", color: css("--rouge") }
+    ], { aria: "Chiffre d'affaires mensuel TTC sur 36 mois" });
+    lineArea($("#ch-cash"), rows, "cash", css("--bleu"), { label: "Résultat cumulé", aria: "Trésorerie cumulée", mark: res.payback || null, markLabel: res.payback ? "rentable" : "" });
+    // tableau
+    $("#sim-table").innerHTML = "<thead><tr><th></th><th>Année 1</th><th>Année 2</th><th>Année 3</th></tr></thead><tbody>" +
+      [["CA TTC", "gross"], ["CA net (après TVA et Apple)", "net"], ["Budget pub", "budget"], ["Résultat", "profit"]].map(function (r) {
+        return "<tr><td>" + r[0] + "</td>" + [0, 1, 2].map(function (i) { return '<td class="n">' + fmtEUR(yearSum(rows, r[1], i)) + "</td>"; }).join("") + "</tr>";
+      }).join("") + "<tr><td>Installs (sans les partenaires)</td>" + [0, 1, 2].map(function (i) { return '<td class="n">' + fmtN(yearSum(rows, "installs", i)) + "</td>"; }).join("") + "</tr>" +
+      "<tr><td>Installs partenaires gratuites</td>" + [0, 1, 2].map(function (i) { return '<td class="n">' + fmtN(yearSum(rows, "partner", i)) + "</td>"; }).join("") + "</tr></tbody>";
+  }
+
+  function drawScenarios() {
+    var g = ["prudent", "realiste", "ambitieux"].map(function (k) {
+      var r = window.simulate(PRESETS[k], 36).rows;
+      return { label: PRESETS[k].name, a1: yearSum(r, "gross", 0), a2: yearSum(r, "gross", 1), a3: yearSum(r, "gross", 2) };
+    });
+    groupCols($("#ch-scen"), g, ["a1", "a2", "a3"], [css("--ord-1"), css("--ord-2"), css("--ord-3")], ["Année 1", "Année 2", "Année 3"]);
+  }
+
+  syncInputs(); setSeg("realiste"); run(); drawStatic(); drawScenarios();
+  var mq = window.matchMedia("(prefers-color-scheme: dark)");
+  var redraw = function () { run(); drawStatic(); drawScenarios(); };
+  if (mq.addEventListener) mq.addEventListener("change", redraw);
+  new MutationObserver(redraw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  var lastW = window.innerWidth, rT = null;
+  window.addEventListener("resize", function () { if (Math.abs(window.innerWidth - lastW) < 8) return; lastW = window.innerWidth; clearTimeout(rT); rT = setTimeout(redraw, 120); });
+
+  /* ================= nav active ================= */
+  var links = $$(".nav a"), secs = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (e) { if (e.isIntersecting) { var i = secs.indexOf(e.target); links.forEach(function (l, k) { l.classList.toggle("on", k === i); }); } });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    secs.forEach(function (s) { if (s) io.observe(s); });
+  }
+})();
+
+</script>

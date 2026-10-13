@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Entre nous</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400..800&display=swap">
+<style>
+:root { --papier: #F5F2EC; --craie: #FFFFFF; --graphite: #26252E; --doux: #5E5B68; --filet: #E4DFD4; --bleu: #1F2FA8; --rouge: #E1243B; --beurre: #FFD23F; }
+@media (prefers-color-scheme: dark) { :root { --papier: #14131A; --craie: #1E1D27; --graphite: #F5F2EC; --doux: #B7B3C2; --filet: #2E2D3A; --bleu: #8C93FF; --rouge: #FF6B7D; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--papier); color: var(--graphite); font: 400 17px/1.5 Figtree, system-ui, sans-serif; }
+main { max-width: 880px; margin: 0 auto; padding: 56px 20px 72px; }
+h1 { margin: 0; font: 400 clamp(44px, 9vw, 72px)/1 Caprasimo, Georgia, serif; }
+h1 span { color: var(--rouge); }
+.lead { margin: 14px 0 40px; font-size: 19px; color: var(--doux); max-width: 560px; }
+.grille { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+a.carte { display: grid; gap: 6px; padding: 22px; border-radius: 22px; background: var(--craie); color: inherit; text-decoration: none; box-shadow: 0 1px 0 var(--filet), 0 8px 24px -16px rgba(0, 0, 0, .35); transition: transform .15s; }
+a.carte:hover, a.carte:focus-visible { transform: translateY(-3px); }
+a.carte:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; }
+.k { font: 800 12px/1 Figtree, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--rouge); }
+a.carte b { font: 400 24px/1.2 Caprasimo, Georgia, serif; }
+a.carte span:last-child { color: var(--doux); font-size: 15.5px; }
+figure { margin: 48px 0 0; }
+figure img { width: 100%; height: auto; border-radius: 22px; display: block; }
+figcaption { margin-top: 10px; font-size: 14px; color: var(--doux); }
+footer { margin-top: 48px; font-size: 14px; color: var(--doux); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Entre nous<span>&nbsp;;</span></h1>
+  <p class="lead">Une question par jour, rien que pour vous deux. Le projet d’app de couple française&nbsp;: le prototype, l’étude, le cahier des charges et la charte.</p>
+  <div class="grille">
+    <a class="carte" href="prototype/index.html"><span class="k">À essayer</span><b>Le prototype</b><span>Onboarding, paywall et app complète, en version gratuite ou Premium.</span></a>
+    <a class="carte" href="rapport/index.html"><span class="k">L’étude</span><b>Paired en France</b><span>Le marché, pourquoi maintenant, le chiffre d’affaires possible.</span></a>
+    <a class="carte" href="docs/cahier-des-charges.md"><span class="k">Le MVP</span><b>Cahier des charges</b><span>Périmètre, parcours, fonctionnalités, RGPD, planning, budget.</span></a>
+    <a class="carte" href="charte/pistes.html"><span class="k">La marque</span><b>Charte graphique</b><span>Les pistes explorées. Le détail est dans charte/README.md.</span></a>
+  </div>
+  <figure>
+    <img src="apercus/premium.png" alt="Six écrans de l’app Entre nous en version Premium : Aujourd’hui, Explorer, un pack, la mission secrète, l’analyse de couple et l’onglet Nous." loading="lazy">
+    <figcaption>L’app en version Premium.</figcaption>
+  </figure>
+  <footer>Projet personnel d’Arthur Mascot, octobre 2026. Tous droits réservés.</footer>
+</main>
+</body>
+</html>

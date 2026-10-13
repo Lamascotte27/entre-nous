@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+# sorties intermédiaires du build (la version du dépôt est prototype/index.html)
+source/onb/onboarding.html
+source/onb/preview.html
+*.ttf

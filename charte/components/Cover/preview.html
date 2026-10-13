@@ -1,0 +1,50 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Entre nous</title>
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--papier); color: var(--graphite); font-family: var(--font-sans); overflow: hidden; }
+  .cover { position: relative; height: 288px; overflow: hidden; }
+  .art { position: absolute; top: 0; left: 480px; width: 480px; height: 288px; overflow: hidden; }
+  .art svg { display: block; width: 480px; height: 288px; }
+  .bleu { fill: var(--bleu); }
+  .graphite { fill: var(--graphite); }
+  .beurre { fill: var(--beurre); }
+  .rouge { fill: var(--rouge); }
+  .sol { fill: var(--papier); }
+  .blk { rx: var(--rayon-l); }
+  .words { position: absolute; left: var(--espace-6); bottom: var(--espace-6); max-width: 440px; }
+  .name { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 76px; line-height: .95; letter-spacing: -.01em; color: var(--graphite); white-space: nowrap; }
+  .tag { margin: var(--espace-2) 0 0 4px; font-size: 14px; line-height: 20px; color: var(--graphite-doux); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      bleu 288×300 bled off the top (le plus grand : Point, la couleur qu'on retient) · graphite 200×172 bled off the top and right · beurre 144×112 (vous deux) · rouge seulement dans la virgule — ≈ 45 % de 960×288
+  arrangement une grande dalle bleue avec deux satellites à droite, pieds alignés à espace-4 du bas, gouttière espace-4
+  pattern     un glyphe surdimensionné, le point-virgule de la marque, découpé dans la dalle bleue : Point en papier (le fond qui apparaît), Virgule en rouge, sa queue coupée par le bord du bloc — parce que la marque se résume à ce signe
+  scales      côtés en multiples de espace-2 ; gouttières espace-4 ; coins rayon-l ; tête de la virgule r 52, Point r 48
+-->
+<defs><clipPath id="dalle"><rect x="0" y="-28" width="288" height="300" rx="28"/></clipPath></defs>
+<rect class="bleu blk" x="0" y="-28" width="288" height="300" rx="28"/>
+<rect class="graphite blk" x="304" y="-28" width="200" height="172" rx="28"/>
+<rect class="beurre blk" x="304" y="160" width="144" height="112" rx="28"/>
+<g clip-path="url(#dalle)">
+  <circle class="sol" cx="144" cy="76" r="48"/>
+  <g transform="translate(67.53 117.18) scale(1.5294)"><path class="rouge" d="M50 11A34 34 0 0 1 81.95 56.6C80 90 60 118 26 140C44 120 52 100 50 79A34 34 0 0 1 50 11Z"/></g>
+</g>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">Entre nous</h1>
+<p class="tag">Deux, et pourtant liés ;</p>
+</div>
+</div>
+</body>
+</html>

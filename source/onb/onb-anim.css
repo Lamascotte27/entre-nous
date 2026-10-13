@@ -1,0 +1,260 @@
+/* ================= mascottes vivantes ================= */
+.pv-wrap { display: inline-block; line-height: 0; }
+.pv-wrap.flotte { animation: flotte 4.2s ease-in-out infinite; }
+@keyframes flotte { 50% { transform: translateY(-7px); } }
+.pv .pv-corps { transform-box: fill-box; transform-origin: 50% 100%; animation: respire 3.2s ease-in-out infinite; }
+.pv .pv-corps-v { transform-box: fill-box; transform-origin: 50% 30%; animation: balance 3.8s ease-in-out infinite; }
+.pv .pv-yeux { transform-box: fill-box; transform-origin: 50% 50%; animation: cligne 4.6s infinite; }
+.pv .pv-ev .pv-yeux { animation-delay: 1.4s; }
+.pv .pv-pup { animation: regard 8s ease-in-out infinite; }
+.pv .pv-ev .pv-pup { animation-delay: .9s; }
+.pv .pv-etoile { transform-box: fill-box; transform-origin: center; animation: brille 1.9s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.pv .pv-coeur { transform-box: fill-box; transform-origin: center; animation: monteCoeur 2.8s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.pv .pv-z { transform-box: fill-box; transform-origin: center; animation: zz 2.6s ease-in infinite; animation-delay: var(--d, 0s); }
+.pv .pv-conf { transform-box: fill-box; transform-origin: center; animation: virevolte 2.4s ease-in-out infinite; animation-delay: var(--d, 0s); }
+.pv .pv-pt { transform-box: fill-box; transform-origin: center; animation: pointille 1.3s ease-in-out infinite; animation-delay: calc(var(--i, 0) * .18s); }
+.pv .pv-q { transform-box: fill-box; transform-origin: 50% 100%; animation: qbond 1.8s cubic-bezier(.34, 1.4, .64, 1) infinite; }
+
+.pose-fete .pv-corps, .pose-fete .pv-corps-v { transform-origin: 50% 100%; animation: sauter .9s cubic-bezier(.3, .7, .4, 1) infinite; }
+.pose-fete .pv-corps-v { animation-delay: .45s; }
+.pose-revelation .pv-corps, .pose-revelation .pv-corps-v { transform-origin: 50% 100%; animation: surprise 2.2s ease-in-out infinite; }
+.pose-revelation .pv-corps-v { animation-delay: .25s; }
+.pose-calin .pv-corps, .pose-calin .pv-corps-v { transform-origin: 50% 100%; animation: berce 3.4s ease-in-out infinite; }
+.pose-endormi .pv-corps, .pose-endormi .pv-corps-v { animation: dodo 3.6s ease-in-out infinite; }
+.pose-attente .pv-corps { animation: impatient 2.6s ease-in-out infinite; }
+.salut .pv-corps-v { animation: salut 1.1s ease-in-out 2, balance 3.8s 2.2s ease-in-out infinite; }
+
+@keyframes respire { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.035, .965); } }
+@keyframes balance { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(4deg); } }
+@keyframes cligne { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.1); } }
+@keyframes regard { 0%, 38%, 100% { transform: translate(0, 0); } 44%, 58% { transform: translate(2.2px, -1px); } 64%, 80% { transform: translate(-2.2px, .5px); } }
+@keyframes brille { 0%, 100% { transform: scale(.65) rotate(0); opacity: .55; } 50% { transform: scale(1.15) rotate(25deg); opacity: 1; } }
+@keyframes monteCoeur { 0% { transform: translateY(8px) scale(.7); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(-22px) scale(1.05); opacity: 0; } }
+@keyframes zz { 0% { transform: translate(-4px, 8px) scale(.5); opacity: 0; } 30% { opacity: 1; } 100% { transform: translate(8px, -16px) scale(1.1); opacity: 0; } }
+@keyframes virevolte { 0%, 100% { transform: translateY(-5px) rotate(0); } 50% { transform: translateY(6px) rotate(180deg); } }
+@keyframes pointille { 0%, 100% { transform: translateY(0); opacity: .25; } 35% { transform: translateY(-7px); opacity: .95; } }
+@keyframes qbond { 0%, 100% { transform: translateY(0) rotate(0); } 25% { transform: translateY(-10px) rotate(-10deg); } 55% { transform: translateY(0) rotate(5deg); } 75% { transform: translateY(-3px) rotate(0); } }
+@keyframes sauter { 0%, 100% { transform: translateY(0) scale(1.06, .94); } 15% { transform: translateY(0) scale(.94, 1.06); } 45% { transform: translateY(-16px) scale(1, 1); } 75% { transform: translateY(0) scale(1.04, .96); } }
+@keyframes surprise { 0%, 60%, 100% { transform: translateY(0) scale(1); } 70% { transform: translateY(-10px) scale(1.04); } 82% { transform: translateY(0) scale(1.02, .98); } }
+@keyframes berce { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes dodo { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.05, .95); } }
+@keyframes impatient { 0%, 100% { transform: translateX(0) rotate(0); } 20% { transform: translateX(-2px) rotate(-4deg); } 40% { transform: translateX(2px) rotate(4deg); } 60% { transform: translateX(0) rotate(0); } }
+@keyframes salut { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-14deg); } 75% { transform: rotate(14deg); } }
+
+/* entrées des mascottes */
+.entree .pv-ep, .entree .pv-ev { transform-box: fill-box; animation: chute .85s cubic-bezier(.34, 1.5, .64, 1) both; }
+.entree .pv-ev { animation-delay: .2s; }
+@keyframes chute { from { transform: translateY(-160px) scale(.8); opacity: 0; } 55% { opacity: 1; } to { transform: none; opacity: 1; } }
+.pop { animation: pop .6s cubic-bezier(.34, 1.5, .64, 1) both; }
+@keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+.pv.hop { animation: hop .55s cubic-bezier(.34, 1.5, .64, 1); }
+@keyframes hop { 0% { transform: none; } 30% { transform: translateY(-14px) scale(.95, 1.06); } 60% { transform: translateY(0) scale(1.06, .94); } 100% { transform: none; } }
+.pv.hoche { animation: hoche .4s ease-in-out; }
+@keyframes hoche { 0%, 100% { transform: rotate(0); } 30% { transform: rotate(-6deg); } 70% { transform: rotate(5deg); } }
+
+/* ================= écrans pleine couleur ================= */
+.scr.fond-bleu { background: var(--bleu); color: var(--on-bleu); }
+.scr.fond-beurre { background: var(--beurre); color: var(--on-beurre); }
+.fond-bleu .s, .fond-bleu .s b, .fond-bleu .legal, .fond-bleu .lnk, .fond-bleu .back, .fond-bleu .skip { color: var(--on-bleu); }
+.fond-bleu .s, .fond-bleu .legal { opacity: .9; }
+.fond-bleu .btn-p, .fond-bleu .btn-noir { background: var(--on-bleu); color: var(--bleu); }
+.fond-bleu .btn-clair { background: transparent; color: var(--on-bleu); box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--on-bleu) 60%, transparent); }
+.fond-bleu .back:hover { background: color-mix(in srgb, var(--on-bleu) 14%, transparent); }
+.fond-bleu .prog { background: color-mix(in srgb, var(--on-bleu) 24%, transparent); }
+.fond-bleu .prog i { background: var(--beurre); }
+.fond-bleu .prog i::after { background: var(--beurre); box-shadow: 0 0 0 3px var(--bleu); }
+.fond-beurre .s, .fond-beurre .s b, .fond-beurre .lnk { color: var(--on-beurre); }
+.fond-beurre .s { opacity: .85; }
+.fond-beurre .btn-p { background: var(--on-beurre); color: var(--beurre); }
+.billet, .nt, .msg { color: var(--graphite); }
+.phone[data-haut="bleu"] .sbar { color: var(--on-bleu); }
+.phone[data-haut="rouge"] .sbar { color: var(--on-rouge); }
+.phone[data-haut="beurre"] .sbar { color: var(--on-beurre); }
+.phone[data-bas="bleu"] .homebar { background: var(--on-bleu); }
+.phone[data-bas="beurre"] .homebar { background: var(--on-beurre); }
+
+/* ponctuation qui dérive en fond */
+.ambiance { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+.ambiance span { position: absolute; font-family: var(--font-display); line-height: 1; color: currentColor; opacity: .13; animation: derive var(--dur, 9s) ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes derive { 0%, 100% { transform: translate(0, 0) rotate(var(--r, 0deg)); } 50% { transform: translate(var(--x, 10px), var(--y, -18px)) rotate(calc(var(--r, 0deg) + 14deg)); } }
+.scr > .tb, .scr > .sc, .scr > .ft, .scr > .hero-ill { position: relative; z-index: 1; }
+
+/* compagnon qui veille sur les questions */
+.compagnon { position: absolute; right: 16px; top: 98px; z-index: 2; pointer-events: none; }
+.avec-comp .sc > h1.t { padding-right: 78px; }
+
+/* progression avec Point au bout */
+.prog { overflow: visible; position: relative; }
+.prog i { position: relative; transition: width .6s cubic-bezier(.34, 1.3, .64, 1); }
+.prog i::after { content: ""; position: absolute; right: -6px; top: 50%; width: 12px; height: 12px; margin-top: -6px; border-radius: 50%; background: var(--bleu); box-shadow: 0 0 0 3px var(--papier); }
+.prog.bond i::after { animation: bond .5s cubic-bezier(.34, 1.6, .64, 1); }
+@keyframes bond { 40% { transform: scale(1.5); } }
+
+/* entrée en cascade du contenu */
+.cascade .sc > *:not(.opts):not(.mini-q):not(.cmp), .cascade .opts > *, .cascade .cmp > *, .cascade .ft > * { animation: monte .55s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 55ms + 140ms); }
+@keyframes monte { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.opt[aria-checked="true"] .rd { animation: coche .35s cubic-bezier(.34, 1.6, .64, 1); }
+@keyframes coche { from { transform: scale(.5); } to { transform: scale(1); } }
+.seg button[aria-checked="true"] { animation: coche .3s cubic-bezier(.34, 1.6, .64, 1); }
+
+/* billets */
+.billet { transform: rotate(var(--rot, 0deg)); }
+.billet.toi { --rot: -1.4deg; }
+.billet.autre { --rot: 1.2deg; }
+.billet.donne { animation: donne .7s cubic-bezier(.34, 1.3, .64, 1) both; animation-delay: var(--d, 0s); }
+@keyframes donne { from { transform: translateY(60px) rotate(-10deg) scale(.9); opacity: 0; } to { transform: rotate(var(--rot)); opacity: 1; } }
+.billet.arrive { animation: arrive .7s cubic-bezier(.34, 1.4, .64, 1) both; }
+@keyframes arrive { from { transform: translate(40px, -50px) rotate(14deg); opacity: 0; } to { transform: rotate(var(--rot)); opacity: 1; } }
+.billet.glisse { animation: glisse .6s cubic-bezier(.34, 1.3, .64, 1) both; }
+@keyframes glisse { 0% { transform: rotate(0) scale(1.02); } 100% { transform: rotate(var(--rot)); } }
+.billet.deplie { animation: deplie .85s cubic-bezier(.34, 1.3, .64, 1) both; transform-origin: 50% 0; }
+@keyframes deplie { from { transform: rotate(var(--rot)) perspective(700px) rotateX(-88deg); opacity: 0; } to { transform: rotate(var(--rot)); opacity: 1; } }
+.cachet-anim.casse { animation: casse .75s ease-in both; }
+@keyframes casse { 0% { transform: none; } 14% { transform: rotate(-12deg) scale(1.05); } 28% { transform: rotate(10deg); } 42% { transform: rotate(-8deg) scale(1.1); } 58% { transform: rotate(0) scale(1.2); opacity: 1; } 100% { transform: scale(2) rotate(30deg); opacity: 0; } }
+.serie.pop { animation: seriePop .6s cubic-bezier(.34, 1.8, .64, 1); }
+@keyframes seriePop { 40% { transform: scale(1.35); box-shadow: 0 0 0 8px color-mix(in srgb, var(--beurre) 40%, transparent); } }
+
+/* notifications qui tombent */
+.fond-bleu .verr { background: color-mix(in srgb, var(--on-bleu) 12%, transparent); }
+.fond-bleu .verr .h, .fond-bleu .verr .d { color: var(--on-bleu); }
+.verr .nt { animation: tombeNt .7s cubic-bezier(.34, 1.4, .64, 1) both; animation-delay: .7s; }
+.verr .nt + .nt { animation-delay: 1.5s; }
+@keyframes tombeNt { from { transform: translateY(-36px) scale(.94); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* analyse sur fond bleu */
+.fond-bleu .etapes li .pt { border-color: color-mix(in srgb, var(--on-bleu) 35%, transparent); }
+.fond-bleu .etapes li.on:not(.ok) .pt { border-color: var(--beurre); border-top-color: transparent; }
+.fond-bleu .etapes li.ok .pt { background: var(--beurre); border-color: var(--beurre); color: var(--on-beurre); }
+
+/* bandeau coloré du paywall et de l'offre (à la Paired) */
+.band { margin: -58px -24px 0; padding: 64px 24px 26px; border-radius: 0 0 34px 34px; display: grid; justify-items: center; text-align: center; gap: 6px; position: relative; overflow: hidden; }
+.band.b-bleu { background: var(--bleu); color: var(--on-bleu); }
+.band.b-rouge { background: var(--rouge); color: var(--on-rouge); }
+.band > *:not(.ambiance) { position: relative; z-index: 1; }
+.band .t { color: inherit; }
+.band .s { color: inherit; opacity: .9; }
+.remise { font: 400 64px/1 var(--font-display); letter-spacing: -.02em; }
+.btn-p.brille-cta { position: relative; overflow: hidden; }
+.btn-p.brille-cta::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40%; left: -60%; background: linear-gradient(100deg, transparent, color-mix(in srgb, #FFFFFF 45%, transparent), transparent); animation: reflet 3.2s 1.2s ease-in-out infinite; }
+@keyframes reflet { 0% { left: -60%; } 45%, 100% { left: 130%; } }
+.etq { animation: etq 2.8s 1s ease-in-out infinite; transform-origin: left center; }
+@keyframes etq { 0%, 86%, 100% { transform: rotate(0); } 90% { transform: rotate(-4deg); } 95% { transform: rotate(3deg); } }
+
+/* confettis */
+.confetti { position: absolute; z-index: 45; pointer-events: none; top: 0; left: 0; border-radius: 2px; }
+.fond-bleu .qm { color: var(--beurre); }
+.sc > * { flex-shrink: 0; }
+
+/* ================= avant / après interactif ================= */
+.bascule { display: grid; grid-template-columns: 1fr 1fr; position: relative; background: var(--craie); border-radius: 999px; padding: 4px; box-shadow: var(--ombre-billet); }
+.bascule::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--graphite); transition: transform .45s cubic-bezier(.34, 1.3, .64, 1), background-color .45s; }
+.bascule.avec::before { transform: translateX(100%); background: var(--bleu); }
+.bascule button { position: relative; z-index: 1; border: 0; background: transparent; border-radius: 999px; padding: 11px 6px; font: 700 14.5px/18px var(--font-sans); color: var(--graphite-doux); cursor: pointer; transition: color .3s; }
+.bascule button[aria-pressed="true"] { color: var(--papier); }
+.bascule.avec button[aria-pressed="true"] { color: var(--on-bleu); }
+.scene { position: relative; border-radius: 28px; overflow: hidden; min-height: 382px; box-shadow: var(--ombre-billet); }
+.sc-sans, .sc-avec { position: absolute; inset: 0; padding: 22px 22px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; transition: opacity .6s ease, transform .6s cubic-bezier(.2, .8, .2, 1); }
+.sc-sans { background: var(--filet); color: var(--graphite-doux); }
+.sc-sans .sc-ill { filter: grayscale(1); opacity: .7; }
+.sc-avec { background: var(--bleu); color: var(--on-bleu); opacity: 0; transform: scale(.94); }
+.scene.avec .sc-avec { opacity: 1; transform: none; }
+.scene.avec .sc-sans { opacity: 0; transform: scale(1.05); }
+.sc-sans ul, .sc-avec ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; width: 100%; position: relative; z-index: 1; }
+.sc-sans li, .sc-avec li { display: flex; gap: 10px; align-items: flex-start; font: 600 15.5px/21px var(--font-sans); }
+.sc-sans li svg { flex: none; margin-top: 2px; }
+.sc-avec li .ok { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--beurre); color: var(--on-beurre); display: grid; place-items: center; margin-top: -1px; }
+.sc-avec .sc-ill { position: relative; z-index: 1; }
+.scene.avec .sc-avec li { animation: monte .5s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 140ms + 280ms); }
+.scene:not(.avec) .sc-sans li { animation: monte .5s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * 110ms + 200ms); }
+.scene.avec .sc-avec .pv-wrap { animation: pop .6s cubic-bezier(.34, 1.5, .64, 1) both, flotte 4.2s .6s ease-in-out infinite; }
+
+/* ================= variantes thématiques de Point et Virgule ================= */
+/* souvenirs : la photo se balance sur sa pince */
+.pv .pv-photo { transform-box: fill-box; transform-origin: 50% 0; animation: photo 3.4s ease-in-out infinite; }
+@keyframes photo { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(6deg); } }
+/* avenir : l'avion en papier file, sa traînée défile */
+.pv .pv-trace { animation: trace 1.1s linear infinite; }
+@keyframes trace { to { stroke-dashoffset: -24; } }
+.pv .pv-avion { transform-box: fill-box; transform-origin: center; animation: avion 3s ease-in-out infinite; }
+@keyframes avion { 0%, 100% { transform: translate(0, 0) rotate(0); } 30% { transform: translate(8px, -11px) rotate(-9deg); } 65% { transform: translate(-6px, 5px) rotate(6deg); } }
+/* argent : la pièce est lancée en l'air et tourne */
+.pv .pv-piece { animation: piece 1.9s infinite; }
+@keyframes piece { 0%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(.2, .7, .4, 1); } 42% { transform: translateY(-34px); animation-timing-function: cubic-bezier(.6, 0, .8, .4); } 84% { transform: translateY(0); } 90% { transform: translateY(-3px); } }
+.pv .pv-piece-f { transform-box: fill-box; transform-origin: center; animation: flip .42s linear infinite; }
+@keyframes flip { 0%, 100% { transform: scaleX(1); } 50% { transform: scaleX(-1); } }
+.pv .pv-pile { transform-box: fill-box; animation: pile 1.9s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes pile { 0%, 80%, 100% { transform: none; } 88% { transform: translateY(-4px); } }
+.pose-argent .pv-ep .pv-corps { animation: lance 1.9s infinite; }
+@keyframes lance { 0%, 100% { transform: scale(1.06, .94); } 8% { transform: translateY(-6px) scale(.96, 1.05); } 18%, 78% { transform: none; } 86% { transform: scale(1.06, .94); } }
+/* disputes : nuage d'orage, éclairs, deux boudeurs… et un cœur pour se réconcilier */
+.pv .pv-nuage { transform-box: fill-box; transform-origin: center; animation: nuage 2.4s ease-in-out infinite; }
+@keyframes nuage { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px) rotate(-2deg); } 75% { transform: translateX(4px) rotate(2deg); } }
+.pv .pv-eclair { animation: eclair 2.4s steps(1) infinite; }
+@keyframes eclair { 0%, 40%, 52%, 60%, 100% { opacity: 0; } 42%, 56% { opacity: 1; } }
+.pose-disputes .pv-corps, .pose-disputes .pv-corps-v { transform-origin: 50% 100%; animation: boude 2.4s ease-in-out infinite; }
+.pose-disputes .pv-corps-v { animation-delay: .3s; }
+@keyframes boude { 0%, 38%, 100% { transform: none; } 44% { transform: translateY(-6px) scale(.96, 1.05); } 52% { transform: scale(1.06, .94); } 60% { transform: none; } }
+/* intimité : la bougie vacille, ils rougissent */
+.pv .pv-flamme { transform-box: fill-box; transform-origin: 50% 100%; animation: flamme .9s ease-in-out infinite alternate; }
+@keyframes flamme { 0% { transform: scale(1, 1) skewX(0); } 33% { transform: scale(.9, 1.1) skewX(-7deg); } 66% { transform: scale(1.06, .94) skewX(6deg); } 100% { transform: scale(.95, 1.07) skewX(-2deg); } }
+.pv .pv-halo { transform-box: fill-box; transform-origin: center; animation: halo 1.8s ease-in-out infinite; }
+@keyframes halo { 50% { transform: scale(1.2); opacity: .14; } }
+.pv .pv-joues { animation: rougit 2.6s ease-in-out infinite; }
+@keyframes rougit { 50% { opacity: .5; } }
+.pose-intimite .pv-corps, .pose-intimite .pv-corps-v { transform-origin: 50% 100%; animation: berce 3.4s ease-in-out infinite; }
+/* distance : un cœur voyage de Point à Virgule, entre le soleil et la lune */
+.pv .pv-soleil { transform-box: fill-box; transform-origin: center; animation: tourne 16s linear infinite; }
+.pv .pv-lune { transform-box: fill-box; transform-origin: center; animation: balance 4s ease-in-out infinite; }
+.pv .pv-voyage { transform: translate(121px, 82px); animation: voyage 3.2s ease-in-out infinite; }
+@keyframes voyage { 0% { transform: translate(70px, 150px) scale(.2); opacity: 0; } 8% { transform: translate(78px, 132px) scale(1); opacity: 1; } 25% { transform: translate(95px, 103px) scale(1.1); } 45% { transform: translate(121px, 82px) scale(1.3); } 65% { transform: translate(148px, 86px) scale(1.1); } 82% { transform: translate(176px, 112px) scale(1); opacity: 1; } 90% { transform: translate(180px, 120px) scale(1.7); opacity: 0; } 100% { transform: translate(180px, 120px) scale(.2); opacity: 0; } }
+.pose-distance .pv-corps { transform-origin: 50% 100%; animation: envoie 3.2s ease-in-out infinite; }
+@keyframes envoie { 0%, 16%, 100% { transform: none; } 4% { transform: translateY(-7px) scale(.96, 1.05); } 10% { transform: scale(1.05, .95); } }
+.pose-distance .pv-corps-v { animation: recoit 3.2s ease-in-out infinite; }
+@keyframes recoit { 0%, 80%, 97%, 100% { transform: rotate(0); } 86% { transform: translateY(-7px) rotate(-9deg); } 92% { transform: rotate(5deg); } }
+/* rire : fou rire, larmes et points d'exclamation */
+.pose-rire .pv-corps, .pose-rire .pv-corps-v { transform-origin: 50% 100%; animation: rire 1.6s ease-in-out infinite; }
+.pose-rire .pv-corps-v { animation-delay: .12s; }
+@keyframes rire { 0%, 56%, 100% { transform: none; } 5%, 15%, 25%, 35%, 45% { transform: translateY(-4px) rotate(-3deg); } 10%, 20%, 30%, 40%, 50% { transform: translateY(1px) rotate(3deg); } }
+.pv .pv-larme { transform-box: fill-box; transform-origin: center; animation: larme 1.6s ease-out infinite; animation-delay: var(--d, 0s); }
+@keyframes larme { 0%, 8% { transform: translate(0, 0) scale(.3); opacity: 0; } 18% { opacity: 1; transform: translate(calc(var(--x) * .3), -5px) scale(1); } 60% { transform: translate(var(--x), 10px); opacity: 1; } 76%, 100% { opacity: 0; transform: translate(var(--x), 18px); } }
+.pv .pv-ha { transform-box: fill-box; transform-origin: 50% 100%; animation: ha 1.6s cubic-bezier(.34, 1.5, .64, 1) infinite; }
+.pv .pv-ha2 { animation-delay: .18s; }
+.pv .pv-ha3 { animation-delay: .36s; }
+@keyframes ha { 0%, 62%, 100% { transform: scale(0); opacity: 0; } 10%, 48% { transform: scale(1) rotate(-8deg); opacity: 1; } 26% { transform: scale(1.12) rotate(8deg); } }
+/* parents : le bébé point rebondit entre eux */
+.pv .pv-bebe { transform-box: fill-box; transform-origin: 50% 100%; animation: bebe 1.1s infinite; }
+@keyframes bebe { 0%, 100% { transform: translateY(0) scale(1.08, .92); animation-timing-function: cubic-bezier(.2, .7, .4, 1); } 45% { transform: translateY(-17px) scale(.95, 1.05); animation-timing-function: cubic-bezier(.6, 0, .8, .4); } 72% { transform: translateY(0) scale(1.07, .93); } }
+.pose-parents .pv-corps, .pose-parents .pv-corps-v { transform-origin: 50% 100%; animation: berce 2.6s ease-in-out infinite; }
+.pose-souvenirs .pv-corps, .pose-avenir .pv-corps { animation-duration: 2.6s; }
+
+/* ================= chargement : le point plonge dans la virgule, ils se mélangent ================= */
+.melange { display: block; overflow: visible; }
+.melange .lm-vp { fill: #E1243B; animation: lmCouleurV 2.2s ease-in-out infinite; }
+.melange .lm-pp { fill: #1F2FA8; animation: lmCouleurP 2.2s ease-in-out infinite; }
+.melange .lm-pt { transform-origin: 0px -48.5px; animation: lmPoint 2.2s infinite; }
+.melange .lm-v { transform-origin: 0px -15px; animation: lmVirgule 2.2s infinite; }
+@keyframes lmPoint {
+  0% { transform: translateY(-5px); animation-timing-function: cubic-bezier(.3, 0, .6, 1); }
+  10% { transform: translateY(-12px) scale(.94, 1.06); animation-timing-function: cubic-bezier(.6, 0, .9, .5); }
+  26% { transform: translateY(33.5px) scale(1.08, .92); }
+  34%, 58% { transform: translateY(33.5px) scale(.8); animation-timing-function: cubic-bezier(.2, .6, .3, 1); }
+  70% { transform: translateY(-14px) scale(.9, 1.14); animation-timing-function: ease-in; }
+  78% { transform: translateY(-5px) scale(1.1, .9); }
+  86%, 100% { transform: translateY(-5px) scale(1); }
+}
+@keyframes lmVirgule {
+  0%, 22% { transform: none; }
+  28% { transform: scale(1.12, .88); animation-timing-function: cubic-bezier(.4, 0, .2, 1); }
+  34% { transform: scale(1.06) rotate(0); animation-timing-function: cubic-bezier(.5, 0, .3, 1); }
+  60% { transform: scale(1.06) rotate(360deg); }
+  70% { transform: scale(.94, 1.06) rotate(360deg); }
+  80% { transform: rotate(354deg); }
+  90%, 100% { transform: rotate(360deg); }
+}
+@keyframes lmCouleurV { 0%, 20%, 66%, 100% { fill: #E1243B; } 31%, 56% { fill: #7E2A78; } }
+@keyframes lmCouleurP { 0%, 20%, 66%, 100% { fill: #1F2FA8; } 31%, 56% { fill: #7E2A78; } }
+
+.charge { position: absolute; inset: 0; z-index: 45; background: var(--papier); display: grid; place-content: center; justify-items: center; gap: 22px; padding: 24px; text-align: center; animation: inF .25s ease both; }
+.charge p { margin: 0; max-width: 260px; font: 400 21px/27px var(--font-display); color: var(--graphite); text-wrap: balance; animation: monte .5s .15s cubic-bezier(.2, .8, .2, 1) both; }
+.charge.sort { animation: outF .4s ease both; }
+.fond-bleu .melange, .ill .melange { margin: 0 auto; }

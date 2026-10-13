@@ -1,0 +1,219 @@
+{
+ "v": 3,
+ "layout": "files",
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-10-13T11:10:57Z"
+ },
+ "title": "Entre nous",
+ "namespace": "EntreNous",
+ "libraries": [
+  {
+   "name": "react",
+   "version": "18"
+  },
+  {
+   "name": "react-dom",
+   "version": "18"
+  }
+ ],
+ "sections": {},
+ "groups": [
+  "Logos",
+  "Mascottes",
+  "Ponctuation",
+  "Motifs"
+ ],
+ "assetGroups": {
+  "Logos": {
+   "name": "Logos",
+   "tile": "l",
+   "order": [
+    "entre-nous-logo.svg",
+    "entre-nous-logo-papier.svg",
+    "entre-nous-logo-graphite.svg",
+    "entre-nous-signe.svg",
+    "app-icon.svg",
+    "app-icon-bleu.svg"
+   ],
+   "files": {
+    "entre-nous-logo.svg": {
+     "name": "entre-nous-logo.svg",
+     "blob": "2f7603de4baaaa1fbfe3f80de26f0474",
+     "size": 11353,
+     "type": "image/svg+xml"
+    },
+    "entre-nous-logo-papier.svg": {
+     "name": "entre-nous-logo-papier.svg",
+     "blob": "0a739fa65b9cd0b4924d180d16523d72",
+     "size": 11353,
+     "type": "image/svg+xml"
+    },
+    "entre-nous-logo-graphite.svg": {
+     "name": "entre-nous-logo-graphite.svg",
+     "blob": "2aa7aacc90edd71254823b1782e11f5b",
+     "size": 11353,
+     "type": "image/svg+xml"
+    },
+    "entre-nous-signe.svg": {
+     "name": "entre-nous-signe.svg",
+     "blob": "512cd829b262fd74669cee9f4a39713d",
+     "size": 341,
+     "type": "image/svg+xml"
+    },
+    "app-icon.svg": {
+     "name": "app-icon.svg",
+     "blob": "927a1c24b0f75145dc09420a4c0c8d68",
+     "size": 462,
+     "type": "image/svg+xml"
+    },
+    "app-icon-bleu.svg": {
+     "name": "app-icon-bleu.svg",
+     "blob": "097aef9a3c9163d751a5f665403eaed2",
+     "size": 473,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Mascottes": {
+   "name": "Mascottes",
+   "tile": "m",
+   "order": [
+    "ensemble.svg",
+    "question.svg",
+    "attente.svg",
+    "revelation.svg",
+    "calin.svg",
+    "fete.svg",
+    "endormi.svg",
+    "point.svg",
+    "virgule.svg"
+   ],
+   "files": {
+    "ensemble.svg": {
+     "name": "ensemble.svg",
+     "blob": "36882bd69f34a5b78cae804b6ff18630",
+     "size": 1618,
+     "type": "image/svg+xml"
+    },
+    "question.svg": {
+     "name": "question.svg",
+     "blob": "144acbcd4074cb4264b97a869714e7cf",
+     "size": 3014,
+     "type": "image/svg+xml"
+    },
+    "attente.svg": {
+     "name": "attente.svg",
+     "blob": "70f718811c82cd83bb93f7bb69a40a51",
+     "size": 1110,
+     "type": "image/svg+xml"
+    },
+    "revelation.svg": {
+     "name": "revelation.svg",
+     "blob": "f37dfee7eac4c66979304083570b33b3",
+     "size": 2241,
+     "type": "image/svg+xml"
+    },
+    "calin.svg": {
+     "name": "calin.svg",
+     "blob": "6755e1c47422562bea28f53e77597cd2",
+     "size": 1605,
+     "type": "image/svg+xml"
+    },
+    "fete.svg": {
+     "name": "fete.svg",
+     "blob": "46942988f82acdcbc11274d74e4b238d",
+     "size": 2057,
+     "type": "image/svg+xml"
+    },
+    "endormi.svg": {
+     "name": "endormi.svg",
+     "blob": "c07d91c89e42c12dc5de46161c858434",
+     "size": 1608,
+     "type": "image/svg+xml"
+    },
+    "point.svg": {
+     "name": "point.svg",
+     "blob": "c59ea31bed8307c31d674aa6997216c0",
+     "size": 982,
+     "type": "image/svg+xml"
+    },
+    "virgule.svg": {
+     "name": "virgule.svg",
+     "blob": "a3564093ee028a1ca20c727f12b42ddc",
+     "size": 1093,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Ponctuation": {
+   "name": "Ponctuation",
+   "tile": "s",
+   "order": [
+    "question.svg",
+    "attente.svg",
+    "revelation.svg",
+    "nous.svg",
+    "cachet.svg"
+   ],
+   "files": {
+    "question.svg": {
+     "name": "question.svg",
+     "blob": "073111d7bba18d2da8358c466b1ef0fc",
+     "size": 1498,
+     "type": "image/svg+xml"
+    },
+    "attente.svg": {
+     "name": "attente.svg",
+     "blob": "bd405b87addd4ecd6a96332df898d6e2",
+     "size": 265,
+     "type": "image/svg+xml"
+    },
+    "revelation.svg": {
+     "name": "revelation.svg",
+     "blob": "525a77c9e51a391ca40cbb26c0c69155",
+     "size": 852,
+     "type": "image/svg+xml"
+    },
+    "nous.svg": {
+     "name": "nous.svg",
+     "blob": "911d0f020820ef05cc5333d60a34b2d8",
+     "size": 341,
+     "type": "image/svg+xml"
+    },
+    "cachet.svg": {
+     "name": "cachet.svg",
+     "blob": "be82e3ce9af9ff5f442e9f94e3d82a91",
+     "size": 848,
+     "type": "image/svg+xml"
+    }
+   }
+  },
+  "Motifs": {
+   "name": "Motifs",
+   "tile": "m",
+   "order": [
+    "motif-ponctuation.svg"
+   ],
+   "files": {
+    "motif-ponctuation.svg": {
+     "name": "motif-ponctuation.svg",
+     "blob": "f4c07854c35ca7bdea222e580a757002",
+     "size": 9444,
+     "type": "image/svg+xml"
+    }
+   }
+  }
+ },
+ "blobs": {},
+ "docs": {
+  "readme": "project/README.md",
+  "sections": []
+ },
+ "lastChange": {
+  "by": "Claude",
+  "via": "Claude Code (application de bureau)",
+  "at": "2026-10-13T11:10:57Z",
+  "note": "Charte Entre nous : concept Point-virgule, typographie Caprasimo et Figtree"
+ }
+}

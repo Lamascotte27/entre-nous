@@ -1,0 +1,235 @@
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dots"><i></i><i></i></span><span class="t">Paired, version française</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#mecanique">Mécanique</a>
+      <a href="#onboarding">Onboarding</a>
+      <a href="#produit">Produit</a>
+      <a href="#france">Pourquoi la France</a>
+      <a href="#ca">Chiffre d'affaires</a>
+      <a href="#plan">Plan</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <div class="kicker">Étude d'opportunité · app de couple · octobre 2026</div>
+        <h1 style="margin-top:18px">Une question par jour. Deux réponses <em>cachées</em>. <span class="amt">≈ 300 k$</span> par mois.</h1>
+        <p class="lede">Paired transforme la conversation de couple en rituel quotidien, et le fait payer en abonnement. Ce dossier décortique la machine (produit, onboarding, paywall), puis chiffre ce qu'une version pensée pour la France peut rapporter.</p>
+        <p class="src hero-note">Essayez la démo : la réponse de Thomas reste floue tant que vous n'avez pas répondu.</p>
+      </div>
+      <div class="qotd" aria-label="Démo de la question du jour">
+        <div class="qotd-top"><span class="kicker">Question du jour</span><span class="streak" id="streak"></span></div>
+        <div class="qotd-q" id="q-text" aria-live="polite"></div>
+        <div class="pair">
+          <div class="ans me">
+            <div class="who"><i></i>Vous</div>
+            <label for="me-in" class="small" style="position:absolute;left:-9999px">Votre réponse</label>
+            <textarea id="me-in" placeholder="Votre réponse…" maxlength="180"></textarea>
+            <div class="said" id="me-said" hidden></div>
+          </div>
+          <div class="ans them locked" id="them">
+            <div class="who"><i></i>Thomas</div>
+            <div class="said" id="them-said" aria-hidden="false"></div>
+            <div class="lockmsg"><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="5" width="8" height="6" rx="1.5" fill="currentColor"/><path d="M4 5V3.5a2 2 0 0 1 4 0V5" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>Thomas a répondu. Répondez pour voir sa réponse.</div>
+          </div>
+        </div>
+        <div class="qotd-actions">
+          <button class="btn primary" id="q-send" type="button" disabled>Envoyer et révéler</button>
+          <button class="btn" id="q-next" type="button" hidden>Question suivante</button>
+        </div>
+        <div class="qotd-foot">C'est tout le produit : 2 minutes par jour, une curiosité qu'on ne peut satisfaire qu'en répondant, et un partenaire qui attend.</div>
+      </div>
+    </section>
+
+    <div class="figs" id="figs">[[FIGS]]</div>
+    <p class="src" style="margin-top:10px">[[FIGS_SRC]]</p>
+
+    <!-- ============ MÉCANIQUE ============ -->
+    <section class="ch" id="mecanique">
+      <div class="ch-head">
+        <div class="kicker">La mécanique</div>
+        <h2>Un rituel de deux minutes qui se relance tout seul</h2>
+        <p class="lede">Le cœur de Paired tient en une boucle. Chaque tour commence par une notification venue d'une personne, pas d'une marque. C'est ce qui la rend difficile à ignorer.</p>
+      </div>
+      <div class="mech">
+        <div class="loop" id="loop">[[LOOP_SVG]]</div>
+        <div class="points">
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 4v3.2l2 1.3" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span><div><h3>Une boucle ouverte</h3><p>La réponse cachée crée un suspense qu'on ne ferme qu'en répondant soi-même. Personne ne laisse une question en suspens sur son couple.</p></div></div>
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="5" cy="5" r="2.5" fill="currentColor"/><circle cx="10" cy="6" r="2" fill="currentColor"/><path d="M1 13c0-2.5 1.8-4 4-4s4 1.5 4 4M8.5 13c0-2 1-3.2 2.3-3.2S13 11 13 13" stroke="currentColor" stroke-width="1.4" fill="none"/></svg></span><div><h3>Une obligation douce</h3><p>L'autre attend votre réponse. La rétention ne dépend plus de la motivation d'une seule personne mais de celle du couple.</p></div></div>
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 3h10M2 7h10M2 11h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span><div><h3>Un contenu presque gratuit</h3><p>Une question tient en une ligne. 365 bonnes questions couvrent une année, et les réponses du couple créent le reste du contenu.</p></div></div>
+          <div class="point"><span class="ic"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 10l4-6 4 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/><path d="M5 10h4" stroke="currentColor" stroke-width="1.6"/></svg></span><div><h3>Une acquisition qui double</h3><p>Chaque utilisateur doit inviter son partenaire. Une install achetée en entraîne une deuxième gratuite, ce qui pousse le classement App Store.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ONBOARDING ============ -->
+    <section class="ch" id="onboarding" tabindex="-1">
+      <div class="ch-head">
+        <div class="kicker">L'onboarding</div>
+        <h2>22 écrans avant de payer, et pourtant ça convertit</h2>
+        <p class="lede">Reconstitution de l'onboarding iOS filmé dans le tweet. Chaque écran a un rôle précis : engager, personnaliser, faire venir le partenaire, puis vendre. Naviguez avec les flèches ou cliquez sur la frise.</p>
+      </div>
+      <div class="ob">
+        <div class="phone" aria-live="polite"><div class="screen" id="ob-screen"></div></div>
+        <div class="ob-panel">
+          <div class="ob-meta"><span class="chip" id="ob-phase"></span><span class="ob-count" id="ob-count"></span></div>
+          <h3 class="ob-lever" id="ob-lever"></h3>
+          <p class="ob-why" id="ob-why"></p>
+          <div class="ob-fr"><b>Pour la version française</b><span id="ob-fr"></span></div>
+          <div class="ob-ctrl">
+            <button class="btn" id="ob-prev" type="button" aria-label="Écran précédent">← Précédent</button>
+            <button class="btn primary" id="ob-next" type="button" aria-label="Écran suivant">Suivant →</button>
+            <button class="btn" id="ob-play" type="button">Lecture auto</button>
+            <span class="hint">ou flèches ← → du clavier</span>
+          </div>
+        </div>
+      </div>
+      <div class="strip">
+        <div class="strip-bar" id="ob-strip" role="group" aria-label="Les 22 écrans"></div>
+        <div class="strip-legend" id="ob-legend"></div>
+      </div>
+      <div class="takeaways">
+        <div><b>Le compte d'abord</b><span>L'email est capté à l'écran 1. Celui qui ne paie pas reste joignable.</span></div>
+        <div><b>9 questions sur le couple</b><span>Chaque réponse est un petit investissement. Au paywall, on a déjà « construit » quelque chose.</span></div>
+        <div><b>Le partenaire avant le prix</b><span>Invitation et notifications sont placées avant le paywall : la viralité ne dépend pas de l'achat.</span></div>
+        <div><b>Deux chances de vendre</b><span>Paywall avec ancrage, puis offre −50 % à la fermeture. Rien n'est gratuit sans passer par là.</span></div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUIT ============ -->
+    <section class="ch" id="produit">
+      <div class="ch-head">
+        <div class="kicker">Le produit</div>
+        <h2>Ce qu'il y a derrière le paywall</h2>
+        <p class="lede">[[FEATS_LEDE]]</p>
+      </div>
+      <div class="feats">[[FEATS]]</div>
+
+      <div class="two" style="margin-top:40px">
+        <div class="panel">
+          <div class="panel-h"><b>Ce que paie un couple sur un an</b><span>Grille affichée dans l'onboarding US (oct. 2026). Le mensuel sert surtout d'ancre.</span></div>
+          <div class="chart" id="ch-price"></div>
+        </div>
+        <div class="prose">
+          <h3>Un prix pensé pour deux</h3>
+          <p><strong>Le mensuel est un leurre.</strong> À 29,99 $, personne ne le prend. Il existe pour que l'annuel affiche « −77 % ».</p>
+          <p><strong>Le prix est divisé par deux à l'écran.</strong> « 3,33 $ each a month » : un abonnement couvre les deux partenaires, donc le prix affiché est par personne. À ce niveau, la comparaison se fait avec un café, pas avec une thérapie de couple.</p>
+          <p><strong>Personne ne repart sans une seconde offre.</strong> Fermer le paywall déclenche −50 % avec compte à rebours. L'annuel tombe à 39,99 $.</p>
+          <p class="src">[[PRICE_NOTE]]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FRANCE ============ -->
+    <section class="ch" id="france">
+      <div class="ch-head">
+        <div class="kicker">Pourquoi la France</div>
+        <h2>[[FR_TITLE]]</h2>
+        <p class="lede">[[FR_LEDE]]</p>
+      </div>
+      <div class="two">
+        <div class="panel">
+          <div class="panel-h"><b>Du marché total au marché visé</b><span>[[FUNNEL_SUB]]</span></div>
+          <div class="chart" id="ch-funnel"></div>
+          <p class="src" style="margin:8px 0 0">[[FUNNEL_SRC]]</p>
+        </div>
+        <div class="prose">[[FR_PROSE]]</div>
+      </div>
+      <div class="why">[[WHY]]</div>
+
+      <div class="two" style="margin-top:56px">
+        <div class="panel">
+          <div class="panel-h"><b>Les leaders mondiaux</b><span>CA mensuel estimé sur l'App Store et Google Play, sept. 2026</span></div>
+          <div class="chart" id="ch-world"></div>
+          <p class="src" style="margin:8px 0 0">Sensor Tower, pages publiques, estimations arrondies hors ventes web.</p>
+        </div>
+        <div class="prose">[[WORLD_PROSE]]</div>
+      </div>
+
+      <h3 style="margin:56px 0 16px">La concurrence vue depuis la France</h3>
+      <div class="tbl-wrap"><table>[[COMP_TABLE]]</table></div>
+      <p class="src" style="margin-top:10px">[[COMP_SRC]]</p>
+    </section>
+
+    <!-- ============ CA ============ -->
+    <section class="ch" id="ca">
+      <div class="ch-head">
+        <div class="kicker">Chiffre d'affaires</div>
+        <h2>Combien ça peut rapporter en 3 ans</h2>
+        <p class="lede">Un modèle par cohortes mensuelles : le budget pub achète des installs, une partie démarre l'essai, une partie paie, une partie renouvelle. Choisissez un scénario puis bougez les curseurs. Les prix sont TTC, comme sur l'App Store français.</p>
+      </div>
+      <div class="sim">
+        <div class="ctrls panel">
+          <div class="seg" id="sim-seg" role="group" aria-label="Scénario">
+            <button type="button" data-k="prudent">Prudent</button>
+            <button type="button" data-k="realiste">Réaliste</button>
+            <button type="button" data-k="ambitieux">Ambitieux</button>
+          </div>
+          <div id="sim-ctrls" class="ctrls"></div>
+        </div>
+        <div style="min-width:0">
+          <div class="kpis">
+            <div class="kpi"><span class="l">CA année 1</span><span class="v" id="k-y1"></span><span class="s">TTC</span></div>
+            <div class="kpi"><span class="l">CA année 2</span><span class="v" id="k-y2"></span><span class="s">TTC</span></div>
+            <div class="kpi"><span class="l">CA année 3</span><span class="v" id="k-y3"></span><span class="s">dont net encaissé : <b id="k-net"></b></span></div>
+            <div class="kpi"><span class="l">CA du mois 36</span><span class="v" id="k-m36"></span><span class="s" id="k-m36s"></span></div>
+            <div class="kpi"><span class="l">Abonnés actifs au mois 36</span><span class="v" id="k-subs"></span><span class="s" id="k-subs-s"></span></div>
+            <div class="kpi"><span class="l">Résultat cumulé sur 3 ans</span><span class="v" id="k-cash"></span><span class="s">après pub, TVA, Apple et coûts fixes</span></div>
+            <div class="kpi"><span class="l">Rentable (cumul &gt; 0)</span><span class="v" id="k-pay"></span><span class="s">trésorerie cumulée positive</span></div>
+            <div class="kpi"><span class="l">Budget pub total</span><span class="v" id="k-ads"></span><span class="s">sur 36 mois</span></div>
+          </div>
+          <div class="sim-charts">
+            <div class="panel">
+              <div class="panel-h"><b>Chiffre d'affaires mensuel TTC</b><span>Survolez une colonne pour le détail</span></div>
+              <div class="legend"><span><i style="background:var(--bleu)"></i>Nouveaux abonnements</span><span><i style="background:var(--rouge)"></i>Renouvellements</span></div>
+              <div class="chart" id="ch-rev"></div>
+            </div>
+            <div class="panel">
+              <div class="panel-h"><b>Résultat cumulé</b><span>Encaissé net (après TVA 20 % et 15 % d'Apple) moins pub et coûts fixes</span></div>
+              <div class="chart" id="ch-cash"></div>
+            </div>
+            <details class="tablev"><summary>Voir les chiffres en tableau</summary><div class="tbl-wrap" style="margin-top:8px"><table id="sim-table"></table></div></details>
+          </div>
+        </div>
+      </div>
+
+      <div class="two" style="margin-top:28px">
+        <div class="panel">
+          <div class="panel-h"><b>Les trois scénarios côte à côte</b><span>CA TTC par année, réglages par défaut</span></div>
+          <div class="legend"><span><i style="background:var(--ord-1)"></i>Année 1</span><span><i style="background:var(--ord-2)"></i>Année 2</span><span><i style="background:var(--ord-3)"></i>Année 3</span></div>
+          <div class="chart" id="ch-scen"></div>
+        </div>
+        <div class="prose">[[SCEN_PROSE]]</div>
+      </div>
+    </section>
+
+    <!-- ============ PLAN ============ -->
+    <section class="ch" id="plan">
+      <div class="ch-head">
+        <div class="kicker">Plan de lancement</div>
+        <h2>Être prêt pour la Saint-Valentin 2027</h2>
+        <p class="lede">Le 14 février est le pic d'intérêt annuel pour tout ce qui touche au couple. Nous sommes le 13 octobre : il reste 4 mois. C'est assez pour une première version, une base d'abonnés et des créas testées.</p>
+      </div>
+      <div class="plan">[[PLAN]]</div>
+
+      <h3 style="margin:56px 0 16px">Les risques, et comment les contenir</h3>
+      <div class="risks">[[RISKS]]</div>
+
+      <div class="verdict">
+        <div class="kicker" style="color:inherit;opacity:.7">Verdict</div>
+        <h2>[[VERDICT_TITLE]]</h2>
+        [[VERDICT]]
+      </div>
+    </section>
+  </div>
+
+  <footer class="wrap">
+    <div class="kicker" style="margin-bottom:12px">Sources et méthode</div>
+    <p class="small" style="margin-top:0">[[METHOD]]</p>
+    <ol>[[SOURCES]]</ol>
+  </footer>
+</main>
